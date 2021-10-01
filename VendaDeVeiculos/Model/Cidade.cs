@@ -16,12 +16,12 @@ namespace VendaDeVeiculos.Model
         public Cidade()
         {}
 
-        public Cidade(int? id, string nome, string pais, string uf)
+        public Cidade(int? cidId, string cidNome, string cidPais, string cidUf)
         {
-            this.cidId = id;
-            this.cidNome = nome;
-            this.cidPais = pais;
-            this.cidUf = uf;
+            this.cidId = cidId;
+            this.cidNome = cidNome;
+            this.cidPais = cidPais;
+            this.cidUf = cidUf;
         }
 
         public int? getCidId()
@@ -29,9 +29,9 @@ namespace VendaDeVeiculos.Model
             return this.cidId;
         }
 
-        public void setCidId(int? id)
+        public void setCidId(int? cidId)
         {
-            this.cidId = id;
+            this.cidId = cidId;
         }
 
         public string getCidNome()
@@ -39,9 +39,9 @@ namespace VendaDeVeiculos.Model
             return this.cidNome;
         }
 
-        public void setCidNome(string nome)
+        public void setCidNome(string cidNome)
         {
-            this.cidNome = nome;
+            this.cidNome = cidNome;
         }
 
         public string getCidPais()
@@ -49,9 +49,9 @@ namespace VendaDeVeiculos.Model
             return this.cidPais;
         }
 
-        public void setCidPais(string pais)
+        public void setCidPais(string cidPais)
         {
-            this.cidPais = pais;
+            this.cidPais = cidPais;
         }
 
         public string getCidUf()
@@ -59,11 +59,20 @@ namespace VendaDeVeiculos.Model
             return this.cidUf;
         }
 
-        public void setCidUf(string uf)
+        public void setCidUf(string cidUf)
         {
-            this.cidUf = uf;
+            this.cidUf = cidUf;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Cidade cidade &&
+                   cidId == cidade.cidId;
+        }
 
+        public override int GetHashCode()
+        {
+            return -1830224766 + cidId.GetHashCode();
+        }
     }
 }
