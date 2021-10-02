@@ -13,6 +13,11 @@ namespace VendaDeVeiculos.Model
         private string cidPais;
         private string cidUf;
 
+        public int? CidId { get => cidId; set => cidId = value; }
+        public string CidNome { get => cidNome; set => cidNome = value; }
+        public string CidPais { get => cidPais; set => cidPais = value; }
+        public string CidUf { get => cidUf; set => cidUf = value; }
+
         public Cidade()
         {}
 
@@ -21,46 +26,6 @@ namespace VendaDeVeiculos.Model
             this.cidId = cidId;
             this.cidNome = cidNome;
             this.cidPais = cidPais;
-            this.cidUf = cidUf;
-        }
-
-        public int? getCidId()
-        {
-            return this.cidId;
-        }
-
-        public void setCidId(int? cidId)
-        {
-            this.cidId = cidId;
-        }
-
-        public string getCidNome()
-        {
-            return this.cidNome;
-        }
-
-        public void setCidNome(string cidNome)
-        {
-            this.cidNome = cidNome;
-        }
-
-        public string getCidPais()
-        {
-            return this.cidPais;
-        }
-
-        public void setCidPais(string cidPais)
-        {
-            this.cidPais = cidPais;
-        }
-
-        public string getCidUf()
-        {
-            return this.cidUf;
-        }
-
-        public void setCidUf(string cidUf)
-        {
             this.cidUf = cidUf;
         }
 

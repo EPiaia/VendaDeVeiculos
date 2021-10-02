@@ -20,6 +20,18 @@ namespace VendaDeVeiculos.Model
         private string vdrFone;
         private DateTime vdrNascimento;
 
+        public int? VdrId { get => vdrId; set => vdrId = value; }
+        public string VdrNome { get => vdrNome; set => vdrNome = value; }
+        public string VdrCpf { get => vdrCpf; set => vdrCpf = value; }
+        public string VdrBairro { get => vdrBairro; set => vdrBairro = value; }
+        public string VdrLogradouro { get => vdrLogradouro; set => vdrLogradouro = value; }
+        public int? VdrNum { get => vdrNum; set => vdrNum = value; }
+        public string VdrCompl { get => vdrCompl; set => vdrCompl = value; }
+        public string VdrEmail { get => vdrEmail; set => vdrEmail = value; }
+        public string VdrFone { get => vdrFone; set => vdrFone = value; }
+        public DateTime VdrNascimento { get => vdrNascimento; set => vdrNascimento = value; }
+        internal Cidade VdrCidade { get => vdrCidade; set => vdrCidade = value; }
+
         public Vendedor()
         {
         }
@@ -36,116 +48,6 @@ namespace VendaDeVeiculos.Model
             this.vdrCompl = vdrCompl;
             this.vdrEmail = vdrEmail;
             this.vdrFone = vdrFone;
-            this.vdrNascimento = vdrNascimento;
-        }
-
-        public int? getVdrId()
-        {
-            return this.vdrId;
-        }
-
-        public void setVdrId(int? vdrId)
-        {
-            this.vdrId = vdrId;
-        }
-
-        public string getVdrNome()
-        {
-            return this.vdrNome;
-        }
-
-        public void setVdrNome(string vdrNome)
-        {
-            this.vdrNome = vdrNome;
-        }
-
-        public string getVdrCpf()
-        {
-            return this.vdrCpf;
-        }
-
-        public void setVdrCpf(string vdrCpf)
-        {
-            this.vdrCpf = vdrCpf;
-        }
-
-        public Cidade getVdrCidade()
-        {
-            return this.vdrCidade;
-        }
-
-        public void setVdrCidade(Cidade vdrCidade)
-        {
-            this.vdrCidade = vdrCidade;
-        }
-
-        public string getVdrBairro()
-        {
-            return this.vdrBairro;
-        }
-
-        public void setVdrBairro(string vdrBairro)
-        {
-            this.vdrBairro = vdrBairro;
-        }
-
-        public string getVdrLogradouro()
-        {
-            return this.vdrLogradouro;
-        }
-
-        public void setVdrLogradouro(string vdrLogradouro)
-        {
-            this.vdrLogradouro = vdrLogradouro;
-        }
-
-        public int? getVdrNum()
-        {
-            return this.vdrNum;
-        }
-
-        public void setVdrNum(int? vdrNum)
-        {
-            this.vdrNum = vdrNum;
-        }
-
-        public string getVdrCompl()
-        {
-            return this.vdrCompl;
-        }
-
-        public void setVdrCompl(string vdrCompl)
-        {
-            this.vdrCompl = vdrCompl;
-        }
-
-        public string getVdrEmail()
-        {
-            return this.vdrEmail;
-        }
-
-        public void setVdrEmail(string vdrEmail)
-        {
-            this.vdrEmail = vdrEmail;
-        }
-
-        public string getVdrFone()
-        {
-            return this.vdrFone;
-        }
-
-        public void setVdrFone(string vdrFone)
-        {
-            this.vdrFone = vdrFone;
-        }
-
-        public DateTime getVdrNascimento()
-        {
-            return this.vdrNascimento;
-        }
-
-        public void setVdrNascimento(DateTime vdrNascimento)
-        {
             this.vdrNascimento = vdrNascimento;
         }
 
