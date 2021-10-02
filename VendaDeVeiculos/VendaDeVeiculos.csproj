@@ -53,6 +53,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Cidade.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Combustivel.cs" />
+    <Compile Include="Model\Linha.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Tipo.cs" />
     <Compile Include="Model\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
