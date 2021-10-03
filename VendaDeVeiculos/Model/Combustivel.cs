@@ -8,12 +8,8 @@ namespace VendaDeVeiculos.Model
 {
     class Combustivel
     {
-
         private int? comId;
         private string comNome;
-
-        public int? ComId { get => comId; set => comId = value; }
-        public string ComNome { get => comNome; set => comNome = value; }
 
         public Combustivel()
         {
@@ -24,6 +20,9 @@ namespace VendaDeVeiculos.Model
             this.comId = comId;
             this.comNome = comNome;
         }
+
+        public int? ComId { get => comId; set => comId = value; }
+        public string ComNome { get => comNome; set => comNome = value; }
 
         public override bool Equals(object obj)
         {

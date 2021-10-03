@@ -13,11 +13,6 @@ namespace VendaDeVeiculos.Model
         private char linAtiina = 'A';
         private Marca linMarca;
 
-        public int? LinId { get => linId; set => linId = value; }
-        public string LinNome { get => linNome; set => linNome = value; }
-        public char LinAtiina { get => linAtiina; set => linAtiina = value; }
-        internal Marca LinMarca { get => linMarca; set => linMarca = value; }
-
         public Linha()
         {
         }
@@ -29,6 +24,11 @@ namespace VendaDeVeiculos.Model
             this.linAtiina = linAtiina;
             this.linMarca = linMarca;
         }
+
+        public int? LinId { get => linId; set => linId = value; }
+        public string LinNome { get => linNome; set => linNome = value; }
+        public char LinAtiina { get => linAtiina; set => linAtiina = value; }
+        internal Marca LinMarca { get => linMarca; set => linMarca = value; }
 
         public override bool Equals(object obj)
         {

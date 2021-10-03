@@ -13,11 +13,6 @@ namespace VendaDeVeiculos.Model
         private char marAtiina = 'A';
         private byte[] marLogo;
 
-        public int? MarId { get => marId; set => marId = value; }
-        public string MarNome { get => marNome; set => marNome = value; }
-        public char MarAtiina { get => marAtiina; set => marAtiina = value; }
-        public byte[] MarLogo { get => marLogo; set => marLogo = value; }
-
         public Marca()
         {
         }
@@ -29,6 +24,11 @@ namespace VendaDeVeiculos.Model
             this.marAtiina = marAtiina;
             this.marLogo = marLogo;
         }
+
+        public int? MarId { get => marId; set => marId = value; }
+        public string MarNome { get => marNome; set => marNome = value; }
+        public char MarAtiina { get => marAtiina; set => marAtiina = value; }
+        public byte[] MarLogo { get => marLogo; set => marLogo = value; }
 
         public override bool Equals(object obj)
         {
