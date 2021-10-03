@@ -20,18 +20,6 @@ namespace VendaDeVeiculos.Model
         private string cliFone;
         private DateTime cliNascimento;
 
-        public int? CliId { get => cliId; set => cliId = value; }
-        public string CliNome { get => cliNome; set => cliNome = value; }
-        public string CliCpfCnpj { get => cliCpfCnpj; set => cliCpfCnpj = value; }
-        public string CliBairro { get => cliBairro; set => cliBairro = value; }
-        public string CliLogradouro { get => cliLogradouro; set => cliLogradouro = value; }
-        public int? CliNum { get => cliNum; set => cliNum = value; }
-        public string CliCompl { get => cliCompl; set => cliCompl = value; }
-        public string CliEmail { get => cliEmail; set => cliEmail = value; }
-        public string CliFone { get => cliFone; set => cliFone = value; }
-        public DateTime CliNascimento { get => cliNascimento; set => cliNascimento = value; }
-        internal Cidade CliCidade { get => cliCidade; set => cliCidade = value; }
-
         public Cliente()
         {
         }
@@ -50,6 +38,18 @@ namespace VendaDeVeiculos.Model
             this.cliFone = cliFone;
             this.cliNascimento = cliNascimento;
         }
+
+        public int? CliId { get => cliId; set => cliId = value; }
+        public string CliNome { get => cliNome; set => cliNome = value; }
+        public string CliCpfCnpj { get => cliCpfCnpj; set => cliCpfCnpj = value; }
+        public string CliBairro { get => cliBairro; set => cliBairro = value; }
+        public string CliLogradouro { get => cliLogradouro; set => cliLogradouro = value; }
+        public int? CliNum { get => cliNum; set => cliNum = value; }
+        public string CliCompl { get => cliCompl; set => cliCompl = value; }
+        public string CliEmail { get => cliEmail; set => cliEmail = value; }
+        public string CliFone { get => cliFone; set => cliFone = value; }
+        public DateTime CliNascimento { get => cliNascimento; set => cliNascimento = value; }
+        internal Cidade CliCidade { get => cliCidade; set => cliCidade = value; }
 
         public override bool Equals(object obj)
         {

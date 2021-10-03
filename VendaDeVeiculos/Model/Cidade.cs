@@ -13,11 +13,6 @@ namespace VendaDeVeiculos.Model
         private string cidPais;
         private string cidUf;
 
-        public int? CidId { get => cidId; set => cidId = value; }
-        public string CidNome { get => cidNome; set => cidNome = value; }
-        public string CidPais { get => cidPais; set => cidPais = value; }
-        public string CidUf { get => cidUf; set => cidUf = value; }
-
         public Cidade()
         {}
 
@@ -28,6 +23,11 @@ namespace VendaDeVeiculos.Model
             this.cidPais = cidPais;
             this.cidUf = cidUf;
         }
+
+        public int? CidId { get => cidId; set => cidId = value; }
+        public string CidNome { get => cidNome; set => cidNome = value; }
+        public string CidPais { get => cidPais; set => cidPais = value; }
+        public string CidUf { get => cidUf; set => cidUf = value; }
 
         public override bool Equals(object obj)
         {

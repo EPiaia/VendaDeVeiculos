@@ -11,9 +11,6 @@ namespace VendaDeVeiculos.Model
         private int? tipId;
         private string tipNome;
 
-        public int? TipId { get => tipId; set => tipId = value; }
-        public string TipNome { get => tipNome; set => tipNome = value; }
-
         public Tipo()
         {
         }
@@ -23,6 +20,9 @@ namespace VendaDeVeiculos.Model
             this.tipId = tipId;
             this.tipNome = tipNome;
         }
+
+        public int? TipId { get => tipId; set => tipId = value; }
+        public string TipNome { get => tipNome; set => tipNome = value; }
 
         public override bool Equals(object obj)
         {

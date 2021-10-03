@@ -20,18 +20,6 @@ namespace VendaDeVeiculos.Model
         private string vdrFone;
         private DateTime vdrNascimento;
 
-        public int? VdrId { get => vdrId; set => vdrId = value; }
-        public string VdrNome { get => vdrNome; set => vdrNome = value; }
-        public string VdrCpf { get => vdrCpf; set => vdrCpf = value; }
-        public string VdrBairro { get => vdrBairro; set => vdrBairro = value; }
-        public string VdrLogradouro { get => vdrLogradouro; set => vdrLogradouro = value; }
-        public int? VdrNum { get => vdrNum; set => vdrNum = value; }
-        public string VdrCompl { get => vdrCompl; set => vdrCompl = value; }
-        public string VdrEmail { get => vdrEmail; set => vdrEmail = value; }
-        public string VdrFone { get => vdrFone; set => vdrFone = value; }
-        public DateTime VdrNascimento { get => vdrNascimento; set => vdrNascimento = value; }
-        internal Cidade VdrCidade { get => vdrCidade; set => vdrCidade = value; }
-
         public Vendedor()
         {
         }
@@ -50,6 +38,18 @@ namespace VendaDeVeiculos.Model
             this.vdrFone = vdrFone;
             this.vdrNascimento = vdrNascimento;
         }
+
+        public int? VdrId { get => vdrId; set => vdrId = value; }
+        public string VdrNome { get => vdrNome; set => vdrNome = value; }
+        public string VdrCpf { get => vdrCpf; set => vdrCpf = value; }
+        public string VdrBairro { get => vdrBairro; set => vdrBairro = value; }
+        public string VdrLogradouro { get => vdrLogradouro; set => vdrLogradouro = value; }
+        public int? VdrNum { get => vdrNum; set => vdrNum = value; }
+        public string VdrCompl { get => vdrCompl; set => vdrCompl = value; }
+        public string VdrEmail { get => vdrEmail; set => vdrEmail = value; }
+        public string VdrFone { get => vdrFone; set => vdrFone = value; }
+        public DateTime VdrNascimento { get => vdrNascimento; set => vdrNascimento = value; }
+        internal Cidade VdrCidade { get => vdrCidade; set => vdrCidade = value; }
 
         public override bool Equals(object obj)
         {
