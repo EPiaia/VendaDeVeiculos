@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VendaDeVeiculos
+namespace VendaDeVeiculos.Telas
 {
-    public partial class Form1 : Form
+    public partial class CadastroCliente : Form
     {
-        public Form1()
+        public CadastroCliente()
         {
             InitializeComponent();
         }
