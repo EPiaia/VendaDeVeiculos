@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendaDeVeiculos.Telas;
 
 namespace VendaDeVeiculos
 {
@@ -20,6 +21,12 @@ namespace VendaDeVeiculos
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clienteToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CadastroCliente formCC = new CadastroCliente();
+            formCC.Show();
         }
     }
 }
