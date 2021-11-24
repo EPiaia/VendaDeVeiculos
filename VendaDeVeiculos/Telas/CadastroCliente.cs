@@ -22,6 +22,7 @@ namespace VendaDeVeiculos.Telas
         public CadastroCliente()
         {
             InitializeComponent();
+            tipoFisica.Checked = true;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -37,22 +38,104 @@ namespace VendaDeVeiculos.Telas
         {
             cliente.CliId = Convert.ToInt32(tbCodigo.Text);
             cliente.CliNome = tbNome.Text;
-            cliente.CliCpfCnpj = tbCpfCnpj.Text;
+            string cpfCnpj = mtbCpfCnpj.Text;
+            cpfCnpj = cpfCnpj.Replace(",", "");
+            cpfCnpj = cpfCnpj.Replace(".", "");
+            cpfCnpj = cpfCnpj.Replace("-", "");
+            cpfCnpj = cpfCnpj.Replace("/", "");
+            cliente.CliCpfCnpj = cpfCnpj;
             // cliente.CliCidade = Convert.ToInt32(tbCidade.Text)
             cliente.CliBairro = tbBairro.Text;
             cliente.CliLogradouro = tbLogradouro.Text;
-            cliente.CliNum = Convert.ToInt32(tbNum.Text);
+            cliente.CliNum = Convert.ToInt32(mtbNum.Text);
             cliente.CliCompl = tbCompl.Text;
             cliente.CliEmail = tbEmail.Text;
-            cliente.CliFone = tbFone.Text;
+            string fone = mtbFone.Text;
+            fone = fone.Replace("(", "");
+            fone = fone.Replace(")", "");
+            fone = fone.Replace("-", "");
+            cliente.CliFone = fone;
             cliente.CliNascimento = dtpNasc.Value.Date;
             if (adicionar)
             {
                 cs.gravarCliente(cliente);
+                adicionar = false;
             } else
             {
-
+                cs.atualizarCliente(cliente);
             }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            mtbCpfCnpj.Text = "";
+            mtbCpfCnpj.Mask = "999.999.999-99";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            mtbCpfCnpj.Text = "";
+            mtbCpfCnpj.Mask = "99.999.999/9999-99";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPesquisar_Click(object sender, EventArgs e)
+        {
+            ConsultaCliente pesquisa = new ConsultaCliente();
+            adicionar = false;
+            pesquisa.ShowDialog(this);
+        }
+
+        public void getDadosPesquisa(Cliente clientePesquisado)
+        {
+            cliente = clientePesquisado;
+            tbCodigo.Text = cliente.CliId.ToString();
+            tbNome.Text = cliente.CliNome.ToString();
+            if(cliente.CliCpfCnpj.Length > 11)
+            {
+                tipoJuridica.Checked = true;
+            } else
+            {
+                tipoFisica.Checked = true;
+            }
+            mtbCpfCnpj.Text = cliente.CliCpfCnpj.ToString();
+            tbEmail.Text = cliente.CliEmail.ToString();
+            mtbFone.Text = cliente.CliFone.ToString();
+            dtpNasc.Value = cliente.CliNascimento;
+            tbBairro.Text = cliente.CliBairro.ToString();
+            tbLogradouro.Text = cliente.CliLogradouro.ToString();
+            mtbNum.Text = cliente.CliNum.ToString();
+            tbCompl.Text = cliente.CliCompl.ToString();
+        }
+
+        private void btDeletar_Click(object sender, EventArgs e)
+        {
+            cs.deletarCliente(cliente);
+            limparCampos();
+        }
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+        }
+
+        private void limparCampos()
+        {
+            tbCodigo.Text = "";
+            tbNome.Text = "";
+            mtbCpfCnpj.Text = "";
+            tbEmail.Text = "";
+            mtbFone.Text = "";
+            dtpNasc.Value = DateTime.Now;
+            tbCidade.Text = ""; //
+            tbBairro.Text = "";
+            tbLogradouro.Text = "";
+            mtbNum.Text = "";
+            tbCompl.Text = "";
+            cliente = new Cliente();
+        }      
     }
 }
