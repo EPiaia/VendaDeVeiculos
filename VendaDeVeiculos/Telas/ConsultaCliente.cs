@@ -87,5 +87,10 @@ namespace VendaDeVeiculos.Telas
             tbCpfCnpj.Text = "";
             dgClientes.DataSource = new ArrayList();
         }
+
+        private void dgClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

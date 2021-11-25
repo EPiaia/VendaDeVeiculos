@@ -46,12 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service\CidadeService.cs" />
     <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Telas\CadastroCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroCidade.Designer.cs">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\CadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\CadastroCliente.Designer.cs">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaCidade.Designer.cs">
+      <DependentUpon>ConsultaCidade.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\ConsultaCliente.cs">
       <SubType>Form</SubType>
@@ -87,8 +100,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\CadastroCidade.resx">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaCidade.resx">
+      <DependentUpon>ConsultaCidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ConsultaCliente.resx">
       <DependentUpon>ConsultaCliente.cs</DependentUpon>

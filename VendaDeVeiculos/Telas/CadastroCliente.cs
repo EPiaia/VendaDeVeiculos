@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,10 @@ namespace VendaDeVeiculos.Telas
     public partial class CadastroCliente : Form
     {
 
-        private Cliente cliente;
+        private Cliente cliente = new Cliente();
         private bool adicionar = false;
         private ClienteService cs = new ClienteService();
+        private CidadeService cidServ = new CidadeService();
 
         public CadastroCliente()
         {
@@ -135,7 +137,49 @@ namespace VendaDeVeiculos.Telas
             tbLogradouro.Text = "";
             mtbNum.Text = "";
             tbCompl.Text = "";
+            tbCidade.Text = "";
+            tbNomeCidade.Text = "";
             cliente = new Cliente();
-        }      
+        }
+
+        private void tbCidade_Leave(object sender, EventArgs e)
+        {
+            if(tbCidade.Text.Trim().Length > 0) {
+                Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
+                filtrosCid.Add("cidId", tbCidade.Text.Trim());
+                ArrayList cidades = cidServ.filtrarCidades(filtrosCid);
+                if (cidades != null && cidades.Count > 0)
+                {
+                    cliente.CliCidade = (Cidade)cidades[0];
+                    tbNomeCidade.Text = this.cliente.CliCidade.CidNome;
+                } else
+                {
+                    cliente.CliCidade = new Cidade();
+                    tbNomeCidade.Text = "";
+                    tbCidade.Text = "";
+                    MessageBox.Show("Nenhuma cidade encontrada com o código informado.");
+                    return;
+                }
+            } else
+            {
+                cliente.CliCidade = new Cidade();
+                tbNomeCidade.Text = "";
+                tbCidade.Text = "";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsultaCidade pesquisaCidade = new ConsultaCidade();
+            pesquisaCidade.ShowDialog(this);
+        }
+
+        public void getCidadePesquisa(Cidade cidade)
+        {
+            this.cliente.CliCidade = cidade;
+            tbCidade.Text = this.cliente.CliCidade.CidId.ToString();
+            tbNomeCidade.Text = this.cliente.CliCidade.CidNome;
+        }
+
     }
 }

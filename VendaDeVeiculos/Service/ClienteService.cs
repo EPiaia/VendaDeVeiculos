@@ -13,6 +13,7 @@ namespace VendaDeVeiculos.Service
     class ClienteService
     {
 
+        private CidadeService cidService = new CidadeService();
         private String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
 
         public ClienteService()
@@ -77,8 +78,7 @@ namespace VendaDeVeiculos.Service
             comm.Parameters.Add("@CpfCnpj", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@CpfCnpj"].Value = cliente.CliCpfCnpj;
             comm.Parameters.Add("@Cidade", System.Data.SqlDbType.Int);
-           // comm.Parameters["@Cidade"].Value = cliente.CliCidade.CidId;
-            comm.Parameters["@Cidade"].Value = DBNull.Value;
+            comm.Parameters["@Cidade"].Value = cliente.CliCidade.CidId;
             comm.Parameters.Add("@Bairro", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@Bairro"].Value = cliente.CliBairro;
             comm.Parameters.Add("@Logradouro", System.Data.SqlDbType.NVarChar);
@@ -144,8 +144,7 @@ namespace VendaDeVeiculos.Service
             comm.Parameters.Add("@CpfCnpj", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@CpfCnpj"].Value = cliente.CliCpfCnpj;
             comm.Parameters.Add("@Cidade", System.Data.SqlDbType.Int);
-            // comm.Parameters["@Cidade"].Value = cliente.CliCidade.CidId;
-            comm.Parameters["@Cidade"].Value = DBNull.Value;
+            comm.Parameters["@Cidade"].Value = cliente.CliCidade.CidId;
             comm.Parameters.Add("@Bairro", System.Data.SqlDbType.NVarChar);
             comm.Parameters["@Bairro"].Value = cliente.CliBairro;
             comm.Parameters.Add("@Logradouro", System.Data.SqlDbType.NVarChar);
@@ -277,7 +276,24 @@ namespace VendaDeVeiculos.Service
                         cliente.CliId = Convert.ToInt32(reader["CLI_ID"]);
                         cliente.CliNome = reader["CLI_NOME"].ToString();
                         cliente.CliCpfCnpj = reader["CLI_CPFCNPJ"].ToString();
-                        // cliente.CliCidade = reader["Cidade"].ToString();
+                        int? codCid;
+                        if (Convert.IsDBNull(reader["CLI_CIDADE"]))
+                        {
+                            codCid = null;
+                        } else
+                        {
+                            codCid = Convert.ToInt32(reader["CLI_CIDADE"]);
+                        }
+                        if (codCid != null)
+                        {
+                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
+                            filtrosCid.Add("cidId", codCid.ToString());
+                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
+                            if (cidades.Count > 0)
+                            {
+                                cliente.CliCidade = (Cidade)cidades[0];
+                            }
+                        }
                         cliente.CliBairro = reader["CLI_BAIRRO"].ToString();
                         cliente.CliLogradouro = reader["CLI_LOGRADOURO"].ToString();
                         cliente.CliNum = Convert.ToInt32(reader["CLI_NUM"]);
@@ -358,13 +374,23 @@ namespace VendaDeVeiculos.Service
                     reader = comm.ExecuteReader();
 
                     // Se encontrou um registro, repassa os dados para o form
-                    if (reader.Read())
+                    while (reader.Read())
                     {
                         Cliente cliente = new Cliente();
                         cliente.CliId = Convert.ToInt32(reader["CLI_ID"]);
                         cliente.CliNome = reader["CLI_NOME"].ToString();
                         cliente.CliCpfCnpj = reader["CLI_CPFCNPJ"].ToString();
-                        // cliente.CliCidade = reader["Cidade"].ToString();
+                        int? codCid = Convert.ToInt32(reader["CLI_CIDADE"].ToString());
+                        if (codCid != null)
+                        {
+                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
+                            filtrosCid.Add("cidId", codCid.ToString());
+                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
+                            if (cidades.Count > 0)
+                            {
+                                cliente.CliCidade = (Cidade)cidades[0];
+                            }
+                        }
                         cliente.CliBairro = reader["CLI_BAIRRO"].ToString();
                         cliente.CliLogradouro = reader["CLI_LOGRADOURO"].ToString();
                         cliente.CliNum = Convert.ToInt32(reader["CLI_NUM"]);

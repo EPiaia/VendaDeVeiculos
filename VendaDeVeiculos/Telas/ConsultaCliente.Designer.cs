@@ -30,19 +30,19 @@ namespace VendaDeVeiculos.Telas
         private void InitializeComponent()
         {
             this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbCpfCnpj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
+            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbCpfCnpj = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,37 +61,8 @@ namespace VendaDeVeiculos.Telas
             this.dgClientes.ReadOnly = true;
             this.dgClientes.Size = new System.Drawing.Size(695, 231);
             this.dgClientes.TabIndex = 0;
+            this.dgClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentDoubleClick);
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellDoubleClick);
-            // 
-            // cliId
-            // 
-            this.cliId.DataPropertyName = "cliId";
-            this.cliId.HeaderText = "Código";
-            this.cliId.Name = "cliId";
-            this.cliId.ReadOnly = true;
-            // 
-            // cliNome
-            // 
-            this.cliNome.DataPropertyName = "cliNome";
-            this.cliNome.HeaderText = "Nome";
-            this.cliNome.Name = "cliNome";
-            this.cliNome.ReadOnly = true;
-            this.cliNome.Width = 280;
-            // 
-            // cliCpfCnpj
-            // 
-            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
-            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
-            this.cliCpfCnpj.Name = "cliCpfCnpj";
-            this.cliCpfCnpj.ReadOnly = true;
-            this.cliCpfCnpj.Width = 170;
-            // 
-            // cliNascimento
-            // 
-            this.cliNascimento.DataPropertyName = "cliNascimento";
-            this.cliNascimento.HeaderText = "Data Nascimento";
-            this.cliNascimento.Name = "cliNascimento";
-            this.cliNascimento.ReadOnly = true;
             // 
             // label1
             // 
@@ -124,13 +95,6 @@ namespace VendaDeVeiculos.Telas
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome Completo";
-            // 
-            // tbCpfCnpj
-            // 
-            this.tbCpfCnpj.Location = new System.Drawing.Point(562, 44);
-            this.tbCpfCnpj.Name = "tbCpfCnpj";
-            this.tbCpfCnpj.Size = new System.Drawing.Size(172, 20);
-            this.tbCpfCnpj.TabIndex = 6;
             // 
             // label3
             // 
@@ -171,6 +135,43 @@ namespace VendaDeVeiculos.Telas
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
+            // cliNascimento
+            // 
+            this.cliNascimento.DataPropertyName = "cliNascimento";
+            this.cliNascimento.HeaderText = "Data Nascimento";
+            this.cliNascimento.Name = "cliNascimento";
+            this.cliNascimento.ReadOnly = true;
+            // 
+            // cliCpfCnpj
+            // 
+            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
+            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
+            this.cliCpfCnpj.Name = "cliCpfCnpj";
+            this.cliCpfCnpj.ReadOnly = true;
+            this.cliCpfCnpj.Width = 170;
+            // 
+            // cliNome
+            // 
+            this.cliNome.DataPropertyName = "cliNome";
+            this.cliNome.HeaderText = "Nome";
+            this.cliNome.Name = "cliNome";
+            this.cliNome.ReadOnly = true;
+            this.cliNome.Width = 280;
+            // 
+            // cliId
+            // 
+            this.cliId.DataPropertyName = "cliId";
+            this.cliId.HeaderText = "Código";
+            this.cliId.Name = "cliId";
+            this.cliId.ReadOnly = true;
+            // 
+            // tbCpfCnpj
+            // 
+            this.tbCpfCnpj.Location = new System.Drawing.Point(562, 44);
+            this.tbCpfCnpj.Name = "tbCpfCnpj";
+            this.tbCpfCnpj.Size = new System.Drawing.Size(172, 20);
+            this.tbCpfCnpj.TabIndex = 6;
+            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,14 +202,14 @@ namespace VendaDeVeiculos.Telas
         private System.Windows.Forms.TextBox tbCodigo;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbCpfCnpj;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btPesquisar;
         private System.Windows.Forms.Button btTodos;
+        private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliId;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCpfCnpj;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliNascimento;
-        private System.Windows.Forms.Button btLimpar;
+        private System.Windows.Forms.TextBox tbCpfCnpj;
     }
 }

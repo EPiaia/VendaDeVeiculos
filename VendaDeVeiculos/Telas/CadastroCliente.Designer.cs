@@ -60,11 +60,14 @@ namespace VendaDeVeiculos.Telas
             this.btCancelar = new System.Windows.Forms.Button();
             this.btDeletar = new System.Windows.Forms.Button();
             this.mtbNum = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbNomeCidade = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbCodigo
             // 
+            this.tbCodigo.Enabled = false;
             this.tbCodigo.Location = new System.Drawing.Point(159, 106);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.ReadOnly = true;
@@ -152,8 +155,9 @@ namespace VendaDeVeiculos.Telas
             // 
             this.tbCidade.Location = new System.Drawing.Point(427, 153);
             this.tbCidade.Name = "tbCidade";
-            this.tbCidade.Size = new System.Drawing.Size(195, 20);
+            this.tbCidade.Size = new System.Drawing.Size(37, 20);
             this.tbCidade.TabIndex = 9;
+            this.tbCidade.Leave += new System.EventHandler(this.tbCidade_Leave);
             // 
             // label6
             // 
@@ -350,11 +354,32 @@ namespace VendaDeVeiculos.Telas
             this.mtbNum.TabIndex = 35;
             this.mtbNum.ValidatingType = typeof(int);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(464, 152);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 22);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tbNomeCidade
+            // 
+            this.tbNomeCidade.Enabled = false;
+            this.tbNomeCidade.Location = new System.Drawing.Point(489, 153);
+            this.tbNomeCidade.Name = "tbNomeCidade";
+            this.tbNomeCidade.ReadOnly = true;
+            this.tbNomeCidade.Size = new System.Drawing.Size(178, 20);
+            this.tbNomeCidade.TabIndex = 37;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 508);
+            this.Controls.Add(this.tbNomeCidade);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mtbNum);
             this.Controls.Add(this.btDeletar);
             this.Controls.Add(this.btCancelar);
@@ -426,5 +451,7 @@ namespace VendaDeVeiculos.Telas
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btDeletar;
         private System.Windows.Forms.MaskedTextBox mtbNum;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbNomeCidade;
     }
 }
