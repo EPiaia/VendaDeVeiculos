@@ -112,6 +112,8 @@ namespace VendaDeVeiculos.Telas
             tbLogradouro.Text = cliente.CliLogradouro.ToString();
             mtbNum.Text = cliente.CliNum.ToString();
             tbCompl.Text = cliente.CliCompl.ToString();
+            tbCidade.Text = cliente.CliCidade.CidId.ToString();
+            tbNomeCidade.Text = cliente.CliCidade.CidNome;
         }
 
         private void btDeletar_Click(object sender, EventArgs e)
