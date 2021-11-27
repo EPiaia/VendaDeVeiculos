@@ -29,22 +29,52 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
-            this.tbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tbNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tbCpfCnpj = new System.Windows.Forms.TextBox();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
-            this.tbCpfCnpj = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cliNascimento
+            // 
+            this.cliNascimento.DataPropertyName = "cliNascimento";
+            this.cliNascimento.HeaderText = "Data Nascimento";
+            this.cliNascimento.Name = "cliNascimento";
+            this.cliNascimento.ReadOnly = true;
+            // 
+            // cliCpfCnpj
+            // 
+            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
+            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
+            this.cliCpfCnpj.Name = "cliCpfCnpj";
+            this.cliCpfCnpj.ReadOnly = true;
+            this.cliCpfCnpj.Width = 170;
+            // 
+            // cliNome
+            // 
+            this.cliNome.DataPropertyName = "cliNome";
+            this.cliNome.HeaderText = "Nome";
+            this.cliNome.Name = "cliNome";
+            this.cliNome.ReadOnly = true;
+            this.cliNome.Width = 280;
+            // 
+            // cliId
+            // 
+            this.cliId.DataPropertyName = "cliId";
+            this.cliId.HeaderText = "Código";
+            this.cliId.Name = "cliId";
+            this.cliId.ReadOnly = true;
             // 
             // dgClientes
             // 
@@ -64,36 +94,6 @@ namespace VendaDeVeiculos.Telas
             this.dgClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentDoubleClick);
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellDoubleClick);
             // 
-            // cliId
-            // 
-            this.cliId.DataPropertyName = "cliId";
-            this.cliId.HeaderText = "Código";
-            this.cliId.Name = "cliId";
-            this.cliId.ReadOnly = true;
-            // 
-            // cliNome
-            // 
-            this.cliNome.DataPropertyName = "cliNome";
-            this.cliNome.HeaderText = "Nome";
-            this.cliNome.Name = "cliNome";
-            this.cliNome.ReadOnly = true;
-            this.cliNome.Width = 280;
-            // 
-            // cliCpfCnpj
-            // 
-            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
-            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
-            this.cliCpfCnpj.Name = "cliCpfCnpj";
-            this.cliCpfCnpj.ReadOnly = true;
-            this.cliCpfCnpj.Width = 170;
-            // 
-            // cliNascimento
-            // 
-            this.cliNascimento.DataPropertyName = "cliNascimento";
-            this.cliNascimento.HeaderText = "Data Nascimento";
-            this.cliNascimento.Name = "cliNascimento";
-            this.cliNascimento.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,13 +110,6 @@ namespace VendaDeVeiculos.Telas
             this.tbCodigo.Size = new System.Drawing.Size(100, 20);
             this.tbCodigo.TabIndex = 2;
             // 
-            // tbNome
-            // 
-            this.tbNome.Location = new System.Drawing.Point(186, 44);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(334, 20);
-            this.tbNome.TabIndex = 4;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -126,6 +119,13 @@ namespace VendaDeVeiculos.Telas
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome Completo";
             // 
+            // tbNome
+            // 
+            this.tbNome.Location = new System.Drawing.Point(186, 44);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(334, 20);
+            this.tbNome.TabIndex = 4;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -134,6 +134,13 @@ namespace VendaDeVeiculos.Telas
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "CPF/CNPJ";
+            // 
+            // tbCpfCnpj
+            // 
+            this.tbCpfCnpj.Location = new System.Drawing.Point(562, 44);
+            this.tbCpfCnpj.Name = "tbCpfCnpj";
+            this.tbCpfCnpj.Size = new System.Drawing.Size(172, 20);
+            this.tbCpfCnpj.TabIndex = 6;
             // 
             // btPesquisar
             // 
@@ -171,13 +178,6 @@ namespace VendaDeVeiculos.Telas
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
-            // tbCpfCnpj
-            // 
-            this.tbCpfCnpj.Location = new System.Drawing.Point(562, 44);
-            this.tbCpfCnpj.Name = "tbCpfCnpj";
-            this.tbCpfCnpj.Size = new System.Drawing.Size(172, 20);
-            this.tbCpfCnpj.TabIndex = 6;
-            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,19 +203,19 @@ namespace VendaDeVeiculos.Telas
 
         #endregion
 
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliCpfCnpj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliId;
         private System.Windows.Forms.DataGridView dgClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbCodigo;
-        private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbCpfCnpj;
         private System.Windows.Forms.Button btPesquisar;
         private System.Windows.Forms.Button btTodos;
         private System.Windows.Forms.Button btLimpar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliCpfCnpj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliNascimento;
-        private System.Windows.Forms.TextBox tbCpfCnpj;
     }
 }

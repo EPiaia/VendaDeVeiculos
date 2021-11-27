@@ -83,6 +83,26 @@ namespace VendaDeVeiculos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_documento_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-documento-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_documento_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-documento-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_excluir_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8-excluir-25", resourceCulture);
