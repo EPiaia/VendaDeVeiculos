@@ -29,7 +29,6 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
-            this.mtbUF = new System.Windows.Forms.MaskedTextBox();
             this.tbPais = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,16 +44,9 @@ namespace VendaDeVeiculos.Telas
             this.btLimpar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btPesquisar = new System.Windows.Forms.Button();
+            this.tbUf = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgCidades)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mtbUF
-            // 
-            this.mtbUF.Location = new System.Drawing.Point(684, 46);
-            this.mtbUF.Mask = "__";
-            this.mtbUF.Name = "mtbUF";
-            this.mtbUF.Size = new System.Drawing.Size(52, 20);
-            this.mtbUF.TabIndex = 24;
             // 
             // tbPais
             // 
@@ -196,12 +188,21 @@ namespace VendaDeVeiculos.Telas
             this.btPesquisar.UseVisualStyleBackColor = true;
             this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
+            // tbUf
+            // 
+            this.tbUf.Location = new System.Drawing.Point(684, 47);
+            this.tbUf.MaxLength = 2;
+            this.tbUf.Name = "tbUf";
+            this.tbUf.Size = new System.Drawing.Size(52, 20);
+            this.tbUf.TabIndex = 25;
+            this.tbUf.Leave += new System.EventHandler(this.tbUf_Leave);
+            // 
             // ConsultaCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 380);
-            this.Controls.Add(this.mtbUF);
+            this.Controls.Add(this.tbUf);
             this.Controls.Add(this.tbPais);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btLimpar);
@@ -223,8 +224,6 @@ namespace VendaDeVeiculos.Telas
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox mtbUF;
         private System.Windows.Forms.TextBox tbPais;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btLimpar;
@@ -240,5 +239,6 @@ namespace VendaDeVeiculos.Telas
         private System.Windows.Forms.DataGridViewTextBoxColumn cidNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidPais;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidUf;
+        private System.Windows.Forms.TextBox tbUf;
     }
 }

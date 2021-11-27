@@ -31,7 +31,7 @@ namespace VendaDeVeiculos.Telas
         private void btPesquisar_Click(object sender, EventArgs e)
         {
             if (tbCodigo.Text.Trim().Length < 1 && tbNome.Text.Trim().Length < 1
-                && tbPais.Text.Trim().Length < 1 && mtbUF.Text.Trim().Length < 1)
+                && tbPais.Text.Trim().Length < 1 && tbUf.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Preencha ao menos um dos campos.");
                 return;
@@ -52,15 +52,14 @@ namespace VendaDeVeiculos.Telas
                 {
                     filtros.Add("cidPais", tbPais.Text);
                 }
-                if (mtbUF.Text.Trim().Length > 0)
+                if (tbUf.Text.Trim().Length > 0)
                 {
-                    filtros.Add("cidUf", mtbUF.Text);
+                    filtros.Add("cidUf", tbUf.Text);
                 }
-                dgCidades.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgCidades.AutoGenerateColumns = false;
-                dgCidades.DataSource = cs.filtrarCidades(filtros);
-
             }
+            dgCidades.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgCidades.AutoGenerateColumns = false;
+            dgCidades.DataSource = cs.filtrarCidades(filtros);
         }
 
         private void btTodos_Click(object sender, EventArgs e)
@@ -75,7 +74,7 @@ namespace VendaDeVeiculos.Telas
             tbCodigo.Text = "";
             tbNome.Text = "";
             tbPais.Text = "";
-            mtbUF.Text = "";
+            tbUf.Text = "";
             dgCidades.DataSource = new ArrayList();
         }
 
@@ -98,11 +97,17 @@ namespace VendaDeVeiculos.Telas
                         cadastro.getCidadePesquisa(cidadeSelecionada);
                     } else if (typeof(CadastroCidade).IsInstanceOfType(this.Owner))
                     {
-
+                        CadastroCidade cadastro = (CadastroCidade)this.Owner;
+                        cadastro.getDadosPesquisa(cidadeSelecionada);
                     }
                 }
             }
             this.Close();
+        }
+
+        private void tbUf_Leave(object sender, EventArgs e)
+        {
+            tbUf.Text = tbUf.Text.Trim().ToUpper();
         }
     }
 }

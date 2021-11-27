@@ -29,6 +29,7 @@ namespace VendaDeVeiculos.Telas
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            limparCampos();
             cliente = new Cliente();
             int? codigoCli = cs.getIdNovoCliente();
             cliente.CliId = codigoCli;
@@ -205,7 +206,7 @@ namespace VendaDeVeiculos.Telas
             }
             if (tbNome.Text.Trim().Length < 1)
             {
-                MessageBox.Show("O campo ''Nome Completo'' é obrigatório.");
+                MessageBox.Show("O campo \"Nome Completo\" é obrigatório.");
                 return false;
             }
             string cpfCnpj = mtbCpfCnpj.Text.Trim();
@@ -224,7 +225,7 @@ namespace VendaDeVeiculos.Telas
             telefone = telefone.Replace("-", "").Trim();
             if (telefone.Length < 1)
             {
-                MessageBox.Show("O campo ''Telefone'' é obrigatório.");
+                MessageBox.Show("O campo \"Telefone\" é obrigatório.");
                 return false;
             }
             if (naoPossui18Anos(dtpNasc.Value))
@@ -239,17 +240,17 @@ namespace VendaDeVeiculos.Telas
             }
             if (tbBairro.Text.Trim().Length < 1)
             {
-                MessageBox.Show("O campo ''Bairro'' é obrigatório.");
+                MessageBox.Show("O campo \"Bairro\" é obrigatório.");
                 return false;
             }
             if (tbLogradouro.Text.Trim().Length < 1)
             {
-                MessageBox.Show("O campo ''Logradouro'' é obrigatório.");
+                MessageBox.Show("O campo \"Logradouro\" é obrigatório.");
                 return false;
             }
             if (mtbNum.Text.Trim().Length < 1)
             {
-                MessageBox.Show("O campo ''Número'' é obrigatório.");
+                MessageBox.Show("O campo \"Número\" é obrigatório.");
                 return false;
             }
             return true;

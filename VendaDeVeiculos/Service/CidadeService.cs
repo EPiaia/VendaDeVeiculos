@@ -285,26 +285,28 @@ namespace VendaDeVeiculos.Service
             }
             else
             {
+                List<String> filtrosList = new List<string>();
                 
                 if (filtros.ContainsKey("cidNome"))
                 {
-                    sql += "CID_NOME LIKE '%" + filtros["cidNome"] + "%' ";
-                }
-                if (filtros.ContainsKey("cidNome") && filtros.ContainsKey("cidPais"))
-                {
-                    sql += "AND ";
+                    filtrosList.Add("CID_NOME LIKE '%" + filtros["cidNome"] + "%' ");
                 }
                 if (filtros.ContainsKey("cidPais"))
                 {
-                    sql += "CID_PAIS LIKE '%" + filtros["cidPais"] + "%' ";
-                }
-                if (filtros.ContainsKey("cidPais") && filtros.ContainsKey("cidUf"))
-                {
-                    sql += "AND ";
+                    filtrosList.Add("CID_PAIS LIKE '%" + filtros["cidPais"] + "%' ");
                 }
                 if (filtros.ContainsKey("cidUf"))
                 {
-                    sql += "CID_UF LIKE '%" + filtros["cidUf"] + "%' ";
+                    filtrosList.Add("CID_UF LIKE '%" + filtros["cidUf"] + "%' ");
+                }
+
+                for(int i = 0; i < filtrosList.Count; i++)
+                {
+                    sql += filtrosList[i];
+                    if(filtrosList.Count > 1 && i != filtrosList.Count - 1)
+                    {
+                        sql += " AND ";
+                    }
                 }
             }
 
