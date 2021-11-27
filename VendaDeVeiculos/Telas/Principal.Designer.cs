@@ -36,19 +36,20 @@ namespace VendaDeVeiculos
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.linhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.combustívelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.especificaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btCadVenda = new System.Windows.Forms.Button();
+            this.btCadVeic = new System.Windows.Forms.Button();
+            this.btCadVen = new System.Windows.Forms.Button();
+            this.btCadCli = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -58,7 +59,7 @@ namespace VendaDeVeiculos
             this.gerarRelatórioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1220, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1049, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,13 +70,7 @@ namespace VendaDeVeiculos
             this.clienteToolStripMenuItem,
             this.vendedorToolStripMenuItem,
             this.veículoToolStripMenuItem,
-            this.cidadeToolStripMenuItem,
-            this.linhaToolStripMenuItem,
-            this.marcaToolStripMenuItem,
-            this.modeloToolStripMenuItem,
-            this.tipoToolStripMenuItem,
-            this.combustívelToolStripMenuItem,
-            this.especificaçõesToolStripMenuItem});
+            this.cidadeToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
@@ -104,48 +99,6 @@ namespace VendaDeVeiculos
             this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
             this.veículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículoToolStripMenuItem.Text = "Veículo";
-            // 
-            // cidadeToolStripMenuItem
-            // 
-            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cidadeToolStripMenuItem.Text = "Cidade";
-            // 
-            // linhaToolStripMenuItem
-            // 
-            this.linhaToolStripMenuItem.Name = "linhaToolStripMenuItem";
-            this.linhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.linhaToolStripMenuItem.Text = "Linha";
-            // 
-            // marcaToolStripMenuItem
-            // 
-            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
-            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.marcaToolStripMenuItem.Text = "Marca";
-            // 
-            // modeloToolStripMenuItem
-            // 
-            this.modeloToolStripMenuItem.Name = "modeloToolStripMenuItem";
-            this.modeloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modeloToolStripMenuItem.Text = "Modelo";
-            // 
-            // tipoToolStripMenuItem
-            // 
-            this.tipoToolStripMenuItem.Name = "tipoToolStripMenuItem";
-            this.tipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipoToolStripMenuItem.Text = "Tipo";
-            // 
-            // combustívelToolStripMenuItem
-            // 
-            this.combustívelToolStripMenuItem.Name = "combustívelToolStripMenuItem";
-            this.combustívelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.combustívelToolStripMenuItem.Text = "Combustível";
-            // 
-            // especificaçõesToolStripMenuItem
-            // 
-            this.especificaçõesToolStripMenuItem.Name = "especificaçõesToolStripMenuItem";
-            this.especificaçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.especificaçõesToolStripMenuItem.Text = "Especificações";
             // 
             // gerarRelatórioToolStripMenuItem
             // 
@@ -182,19 +135,87 @@ namespace VendaDeVeiculos
             this.veículosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             // 
+            // cidadeToolStripMenuItem
+            // 
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cidadeToolStripMenuItem.Text = "Cidade";
+            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btSair);
+            this.panel1.Controls.Add(this.btCadVenda);
+            this.panel1.Controls.Add(this.btCadVeic);
+            this.panel1.Controls.Add(this.btCadVen);
+            this.panel1.Controls.Add(this.btCadCli);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1049, 41);
+            this.panel1.TabIndex = 2;
+            // 
+            // btSair
+            // 
+            this.btSair.Image = global::VendaDeVeiculos.Properties.Resources.icons8_porta_30;
+            this.btSair.Location = new System.Drawing.Point(246, 4);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(53, 34);
+            this.btSair.TabIndex = 4;
+            this.btSair.UseVisualStyleBackColor = true;
+            // 
+            // btCadVenda
+            // 
+            this.btCadVenda.Image = global::VendaDeVeiculos.Properties.Resources.icons8_car_sale_30;
+            this.btCadVenda.Location = new System.Drawing.Point(187, 4);
+            this.btCadVenda.Name = "btCadVenda";
+            this.btCadVenda.Size = new System.Drawing.Size(53, 34);
+            this.btCadVenda.TabIndex = 4;
+            this.btCadVenda.UseVisualStyleBackColor = true;
+            // 
+            // btCadVeic
+            // 
+            this.btCadVeic.Image = global::VendaDeVeiculos.Properties.Resources.icons8_fiat_500_30;
+            this.btCadVeic.Location = new System.Drawing.Point(128, 4);
+            this.btCadVeic.Name = "btCadVeic";
+            this.btCadVeic.Size = new System.Drawing.Size(53, 34);
+            this.btCadVeic.TabIndex = 4;
+            this.btCadVeic.UseVisualStyleBackColor = true;
+            // 
+            // btCadVen
+            // 
+            this.btCadVen.Image = global::VendaDeVeiculos.Properties.Resources.icons8_salesman_skin_type_1_30;
+            this.btCadVen.Location = new System.Drawing.Point(69, 4);
+            this.btCadVen.Name = "btCadVen";
+            this.btCadVen.Size = new System.Drawing.Size(53, 34);
+            this.btCadVen.TabIndex = 3;
+            this.btCadVen.UseVisualStyleBackColor = true;
+            // 
+            // btCadCli
+            // 
+            this.btCadCli.Image = global::VendaDeVeiculos.Properties.Resources.icons8_gestão_de_cliente_30;
+            this.btCadCli.Location = new System.Drawing.Point(10, 4);
+            this.btCadCli.Name = "btCadCli";
+            this.btCadCli.Size = new System.Drawing.Size(53, 34);
+            this.btCadCli.TabIndex = 0;
+            this.btCadCli.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 749);
+            this.ClientSize = new System.Drawing.Size(1049, 484);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Venda de Veículos";
+            this.Text = "Gestão de Venda de Veículos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,18 +229,18 @@ namespace VendaDeVeiculos
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veículoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem linhaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modeloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem combustívelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem especificaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerarRelatórioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Button btCadVenda;
+        private System.Windows.Forms.Button btCadVeic;
+        private System.Windows.Forms.Button btCadVen;
+        private System.Windows.Forms.Button btCadCli;
     }
 }
 

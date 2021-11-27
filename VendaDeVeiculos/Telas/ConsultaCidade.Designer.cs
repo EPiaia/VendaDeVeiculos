@@ -32,9 +32,6 @@ namespace VendaDeVeiculos.Telas
             this.mtbUF = new System.Windows.Forms.MaskedTextBox();
             this.tbPais = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btLimpar = new System.Windows.Forms.Button();
-            this.btTodos = new System.Windows.Forms.Button();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +42,9 @@ namespace VendaDeVeiculos.Telas
             this.cidNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btLimpar = new System.Windows.Forms.Button();
+            this.btTodos = new System.Windows.Forms.Button();
+            this.btPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,36 +71,6 @@ namespace VendaDeVeiculos.Telas
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 22;
             this.label4.Text = "País";
-            // 
-            // btLimpar
-            // 
-            this.btLimpar.Location = new System.Drawing.Point(657, 85);
-            this.btLimpar.Name = "btLimpar";
-            this.btLimpar.Size = new System.Drawing.Size(79, 23);
-            this.btLimpar.TabIndex = 21;
-            this.btLimpar.Text = "Limpar";
-            this.btLimpar.UseVisualStyleBackColor = true;
-            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
-            // 
-            // btTodos
-            // 
-            this.btTodos.Location = new System.Drawing.Point(572, 85);
-            this.btTodos.Name = "btTodos";
-            this.btTodos.Size = new System.Drawing.Size(79, 23);
-            this.btTodos.TabIndex = 20;
-            this.btTodos.Text = "Todos";
-            this.btTodos.UseVisualStyleBackColor = true;
-            this.btTodos.Click += new System.EventHandler(this.btTodos_Click);
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Location = new System.Drawing.Point(479, 85);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(87, 23);
-            this.btPesquisar.TabIndex = 19;
-            this.btPesquisar.Text = "Pesquisar";
-            this.btPesquisar.UseVisualStyleBackColor = true;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // label3
             // 
@@ -189,6 +159,42 @@ namespace VendaDeVeiculos.Telas
             this.cidUf.HeaderText = "UF";
             this.cidUf.Name = "cidUf";
             this.cidUf.ReadOnly = true;
+            // 
+            // btLimpar
+            // 
+            this.btLimpar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_vassoura_15;
+            this.btLimpar.Location = new System.Drawing.Point(657, 85);
+            this.btLimpar.Name = "btLimpar";
+            this.btLimpar.Size = new System.Drawing.Size(79, 23);
+            this.btLimpar.TabIndex = 21;
+            this.btLimpar.Text = "Limpar";
+            this.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpar.UseVisualStyleBackColor = true;
+            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
+            // 
+            // btTodos
+            // 
+            this.btTodos.Image = global::VendaDeVeiculos.Properties.Resources.icons8_pesquisar_15;
+            this.btTodos.Location = new System.Drawing.Point(572, 85);
+            this.btTodos.Name = "btTodos";
+            this.btTodos.Size = new System.Drawing.Size(79, 23);
+            this.btTodos.TabIndex = 20;
+            this.btTodos.Text = "Todos";
+            this.btTodos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btTodos.UseVisualStyleBackColor = true;
+            this.btTodos.Click += new System.EventHandler(this.btTodos_Click);
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_pesquisar_15;
+            this.btPesquisar.Location = new System.Drawing.Point(479, 85);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(87, 23);
+            this.btPesquisar.TabIndex = 19;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // ConsultaCidade
             // 

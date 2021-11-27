@@ -30,6 +30,10 @@ namespace VendaDeVeiculos.Telas
         private void InitializeComponent()
         {
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -38,10 +42,6 @@ namespace VendaDeVeiculos.Telas
             this.btPesquisar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
-            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbCpfCnpj = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,36 @@ namespace VendaDeVeiculos.Telas
             this.dgClientes.TabIndex = 0;
             this.dgClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentDoubleClick);
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellDoubleClick);
+            // 
+            // cliId
+            // 
+            this.cliId.DataPropertyName = "cliId";
+            this.cliId.HeaderText = "Código";
+            this.cliId.Name = "cliId";
+            this.cliId.ReadOnly = true;
+            // 
+            // cliNome
+            // 
+            this.cliNome.DataPropertyName = "cliNome";
+            this.cliNome.HeaderText = "Nome";
+            this.cliNome.Name = "cliNome";
+            this.cliNome.ReadOnly = true;
+            this.cliNome.Width = 280;
+            // 
+            // cliCpfCnpj
+            // 
+            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
+            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
+            this.cliCpfCnpj.Name = "cliCpfCnpj";
+            this.cliCpfCnpj.ReadOnly = true;
+            this.cliCpfCnpj.Width = 170;
+            // 
+            // cliNascimento
+            // 
+            this.cliNascimento.DataPropertyName = "cliNascimento";
+            this.cliNascimento.HeaderText = "Data Nascimento";
+            this.cliNascimento.Name = "cliNascimento";
+            this.cliNascimento.ReadOnly = true;
             // 
             // label1
             // 
@@ -107,63 +137,39 @@ namespace VendaDeVeiculos.Telas
             // 
             // btPesquisar
             // 
+            this.btPesquisar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_pesquisar_15;
             this.btPesquisar.Location = new System.Drawing.Point(477, 82);
             this.btPesquisar.Name = "btPesquisar";
             this.btPesquisar.Size = new System.Drawing.Size(87, 23);
             this.btPesquisar.TabIndex = 7;
             this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btPesquisar.UseVisualStyleBackColor = true;
             this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // btTodos
             // 
+            this.btTodos.Image = global::VendaDeVeiculos.Properties.Resources.icons8_pesquisar_15;
             this.btTodos.Location = new System.Drawing.Point(570, 82);
             this.btTodos.Name = "btTodos";
             this.btTodos.Size = new System.Drawing.Size(79, 23);
             this.btTodos.TabIndex = 8;
             this.btTodos.Text = "Todos";
+            this.btTodos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btTodos.UseVisualStyleBackColor = true;
             this.btTodos.Click += new System.EventHandler(this.btTodos_Click);
             // 
             // btLimpar
             // 
+            this.btLimpar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_vassoura_15;
             this.btLimpar.Location = new System.Drawing.Point(655, 82);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(79, 23);
             this.btLimpar.TabIndex = 9;
             this.btLimpar.Text = "Limpar";
+            this.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
-            // 
-            // cliNascimento
-            // 
-            this.cliNascimento.DataPropertyName = "cliNascimento";
-            this.cliNascimento.HeaderText = "Data Nascimento";
-            this.cliNascimento.Name = "cliNascimento";
-            this.cliNascimento.ReadOnly = true;
-            // 
-            // cliCpfCnpj
-            // 
-            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
-            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
-            this.cliCpfCnpj.Name = "cliCpfCnpj";
-            this.cliCpfCnpj.ReadOnly = true;
-            this.cliCpfCnpj.Width = 170;
-            // 
-            // cliNome
-            // 
-            this.cliNome.DataPropertyName = "cliNome";
-            this.cliNome.HeaderText = "Nome";
-            this.cliNome.Name = "cliNome";
-            this.cliNome.ReadOnly = true;
-            this.cliNome.Width = 280;
-            // 
-            // cliId
-            // 
-            this.cliId.DataPropertyName = "cliId";
-            this.cliId.HeaderText = "Código";
-            this.cliId.Name = "cliId";
-            this.cliId.ReadOnly = true;
             // 
             // tbCpfCnpj
             // 

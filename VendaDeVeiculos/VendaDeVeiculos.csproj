@@ -99,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Telas\CadastroCidade.resx">
       <DependentUpon>CadastroCidade.cs</DependentUpon>
@@ -128,6 +129,50 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-salvar-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-soma-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixo-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gestão-de-cliente-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-salesman-skin-type-1-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fiat-500-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-sale-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sair-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-porta-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-limpar-pesquisa-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vassoura-15.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

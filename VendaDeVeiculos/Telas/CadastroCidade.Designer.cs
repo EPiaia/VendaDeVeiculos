@@ -29,55 +29,25 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
-            this.btDeletar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.mtbUF = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbPais = new System.Windows.Forms.TextBox();
-            this.btnGravar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
+            this.btDeletar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btPesquisar = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btDeletar
-            // 
-            this.btDeletar.Location = new System.Drawing.Point(28, 305);
-            this.btDeletar.Name = "btDeletar";
-            this.btDeletar.Size = new System.Drawing.Size(75, 41);
-            this.btDeletar.TabIndex = 63;
-            this.btDeletar.Text = "Deletar";
-            this.btDeletar.UseVisualStyleBackColor = true;
-            this.btDeletar.Click += new System.EventHandler(this.btDeletar_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Location = new System.Drawing.Point(28, 248);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 41);
-            this.btCancelar.TabIndex = 62;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Location = new System.Drawing.Point(28, 191);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(75, 41);
-            this.btPesquisar.TabIndex = 61;
-            this.btPesquisar.Text = "Pesquisar";
-            this.btPesquisar.UseVisualStyleBackColor = true;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // mtbUF
             // 
-            this.mtbUF.Location = new System.Drawing.Point(162, 235);
+            this.mtbUF.Location = new System.Drawing.Point(164, 212);
             this.mtbUF.Mask = "##";
             this.mtbUF.Name = "mtbUF";
             this.mtbUF.Size = new System.Drawing.Size(43, 20);
@@ -88,7 +58,7 @@ namespace VendaDeVeiculos.Telas
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(159, 217);
+            this.label10.Location = new System.Drawing.Point(161, 194);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 15);
             this.label10.TabIndex = 55;
@@ -99,7 +69,7 @@ namespace VendaDeVeiculos.Telas
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(159, 173);
+            this.label5.Location = new System.Drawing.Point(161, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 45;
@@ -108,56 +78,36 @@ namespace VendaDeVeiculos.Telas
             // 
             // tbPais
             // 
-            this.tbPais.Location = new System.Drawing.Point(162, 191);
+            this.tbPais.Location = new System.Drawing.Point(164, 168);
             this.tbPais.Name = "tbPais";
             this.tbPais.Size = new System.Drawing.Size(234, 20);
             this.tbPais.TabIndex = 44;
             this.tbPais.TextChanged += new System.EventHandler(this.tbCidade_TextChanged);
             // 
-            // btnGravar
-            // 
-            this.btnGravar.Location = new System.Drawing.Point(28, 133);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 41);
-            this.btnGravar.TabIndex = 43;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 126);
+            this.label3.Location = new System.Drawing.Point(161, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 15);
+            this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Nome da Cidade";
+            this.label3.Text = "Nome";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(162, 144);
+            this.tbNome.Location = new System.Drawing.Point(164, 121);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(234, 20);
             this.tbNome.TabIndex = 40;
             this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(28, 76);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 41);
-            this.btnNovo.TabIndex = 39;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(180, 9);
+            this.label2.Location = new System.Drawing.Point(147, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 25);
             this.label2.TabIndex = 38;
@@ -168,7 +118,7 @@ namespace VendaDeVeiculos.Telas
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 79);
+            this.label1.Location = new System.Drawing.Point(161, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 37;
@@ -177,29 +127,84 @@ namespace VendaDeVeiculos.Telas
             // 
             // tbCodigo
             // 
-            this.tbCodigo.Location = new System.Drawing.Point(162, 97);
+            this.tbCodigo.Location = new System.Drawing.Point(164, 74);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.ReadOnly = true;
             this.tbCodigo.Size = new System.Drawing.Size(84, 20);
             this.tbCodigo.TabIndex = 36;
             this.tbCodigo.TextChanged += new System.EventHandler(this.tbCodigo_TextChanged);
             // 
+            // btDeletar
+            // 
+            this.btDeletar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_lixo_25;
+            this.btDeletar.Location = new System.Drawing.Point(23, 275);
+            this.btDeletar.Name = "btDeletar";
+            this.btDeletar.Size = new System.Drawing.Size(75, 51);
+            this.btDeletar.TabIndex = 65;
+            this.btDeletar.Text = "Deletar";
+            this.btDeletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btDeletar.UseVisualStyleBackColor = true;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_excluir_25;
+            this.btCancelar.Location = new System.Drawing.Point(23, 218);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(75, 51);
+            this.btCancelar.TabIndex = 64;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_pesquisar_25;
+            this.btPesquisar.Location = new System.Drawing.Point(23, 161);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(75, 51);
+            this.btPesquisar.TabIndex = 63;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_salvar_25;
+            this.btnGravar.Location = new System.Drawing.Point(23, 103);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 51);
+            this.btnGravar.TabIndex = 62;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::VendaDeVeiculos.Properties.Resources.icons8_soma_25;
+            this.btnNovo.Location = new System.Drawing.Point(23, 46);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 51);
+            this.btnNovo.TabIndex = 61;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            // 
             // CadastroCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 356);
+            this.ClientSize = new System.Drawing.Size(526, 353);
             this.Controls.Add(this.btDeletar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btPesquisar);
+            this.Controls.Add(this.btnGravar);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.mtbUF);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbPais);
-            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbNome);
-            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbCodigo);
@@ -211,19 +216,19 @@ namespace VendaDeVeiculos.Telas
         }
 
         #endregion
-        private System.Windows.Forms.Button btDeletar;
-        private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btPesquisar;
         private System.Windows.Forms.MaskedTextBox mtbUF;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbPais;
-        private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbCodigo;
+        private System.Windows.Forms.Button btDeletar;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btPesquisar;
+        private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

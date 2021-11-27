@@ -28,5 +28,11 @@ namespace VendaDeVeiculos
             CadastroCliente formCC = new CadastroCliente();
             formCC.Show();
         }
+
+        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroCidade formCC = new CadastroCidade();
+            formCC.Show();
+        }
     }
 }
