@@ -100,6 +100,11 @@ namespace VendaDeVeiculos.Telas
                         CadastroCidade cadastro = (CadastroCidade)this.Owner;
                         cadastro.getDadosPesquisa(cidadeSelecionada);
                     }
+                    else if (typeof(CadastroVendedor).IsInstanceOfType(this.Owner))
+                    {
+                        CadastroVendedor cadastro = (CadastroVendedor)this.Owner;
+                        cadastro.getCidadePesquisa(cidadeSelecionada);
+                    }
                 }
             }
             this.Close();

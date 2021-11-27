@@ -45,5 +45,29 @@ namespace VendaDeVeiculos
             CadastroCliente formCC = new CadastroCliente();
             formCC.Show();
         }
+
+        private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroVendedor formCV = new CadastroVendedor();
+            formCV.Show();
+        }
+
+        private void btCadVen_Click(object sender, EventArgs e)
+        {
+            CadastroVendedor formCV = new CadastroVendedor();
+            formCV.Show();
+        }
+
+        private void veículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroVeiculo formCV = new CadastroVeiculo();
+            formCV.Show();
+        }
+
+        private void btCadVeic_Click(object sender, EventArgs e)
+        {
+            CadastroVeiculo formCV = new CadastroVeiculo();
+            formCV.Show();
+        }
     }
 }

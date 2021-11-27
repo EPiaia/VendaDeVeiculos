@@ -104,6 +104,7 @@ namespace VendaDeVeiculos.Telas
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
+            cidade = null;
             limparCampos();
         }
 

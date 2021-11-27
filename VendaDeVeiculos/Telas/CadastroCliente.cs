@@ -123,7 +123,7 @@ namespace VendaDeVeiculos.Telas
 
         private void btDeletar_Click(object sender, EventArgs e)
         {
-            if (cliente.Equals(null) || adicionar)
+            if (cliente == null || adicionar)
             {
                 MessageBox.Show("Selecione um cliente válido.");
                 return;
@@ -134,6 +134,7 @@ namespace VendaDeVeiculos.Telas
         }
         private void btCancelar_Click(object sender, EventArgs e)
         {
+            cliente = null;
             limparCampos();
         }
 
@@ -194,7 +195,7 @@ namespace VendaDeVeiculos.Telas
             tbCompl.Text = "";
             tbCidade.Text = "";
             tbNomeCidade.Text = "";
-            cliente = new Cliente();
+            cliente = null;
         }
 
         public Boolean validaCliente()
@@ -214,7 +215,7 @@ namespace VendaDeVeiculos.Telas
             cpfCnpj = cpfCnpj.Replace("-", "");
             cpfCnpj = cpfCnpj.Replace("/", "");
             cpfCnpj = cpfCnpj.Replace(",", "");
-            if (cpfCnpj.Length != 11 || cpfCnpj.Length != 11)
+            if (cpfCnpj.Length != 11 || cpfCnpj.Length != 14)
             {
                 MessageBox.Show("Insira um CPF/CNPJ válido.");
                 return false;

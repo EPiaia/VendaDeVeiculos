@@ -61,7 +61,6 @@ namespace VendaDeVeiculos.Telas
 
         private void dgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if(dgClientes.SelectedRows.Count > 1)
             {
                 // Aviso

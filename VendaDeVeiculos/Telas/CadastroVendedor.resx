@@ -117,16 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="cliId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cliNome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cliCpfCnpj.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cliNascimento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btPesquisaCidade.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAWNJREFUOE9j
+        oBoIDQ3lTEhIyALiNUlJSdsTExMnArERVBo3ACpWByq8k9Qw43/yvLP/kxdd/Z88edf/pNzyf0DxZqgy
+        TACyEaQxecah/xnbv/1vO/rjf//JH//L933/n7Lx/f/E0tb/QMOTocpRAcipIBtTtn77P/Pcz//VB77/
+        z9/97f+EUz//1wDZKasf/09KTnna0NDABNWCAEBbV4OcCtKMCycVN/6Pj4/XhmpBAFDgJC++hlUTDCdV
+        dP0HWmIO1YIAQMGJoMDBpgmMt3z5n5RV8CcuLk4YqgUBgJqNQKEKChxsmkEGA9WsgyrHBEDJZlCoJq96
+        jKTxK0Rjcup7oHwZVCl2AIqOxKTkp6DASars/p+Ymf8HZCNQvCg4Mvqve0DoIqhS7AAUHUANWsDos0hO
+        ThaCCjO4BYYtNHf3/+8RFI7fAFzAFWgzyADP4PCZUCHSANAFc72CwyKhXHIBAwMAHF//gBiSmtgAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
 </root>
