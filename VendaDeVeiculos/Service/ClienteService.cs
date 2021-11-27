@@ -13,7 +13,6 @@ namespace VendaDeVeiculos.Service
     class ClienteService
     {
 
-        private CidadeService cidService = new CidadeService();
         private String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
 
         public ClienteService()
@@ -247,7 +246,8 @@ namespace VendaDeVeiculos.Service
 
             // Cria o comando SQL de consulta
             comm = new SqlCommand(
-                "SELECT * FROM Cliente", conn);
+                "SELECT * FROM CLIENTE CLI " +
+                "   INNER JOIN CIDADE CID ON CID.CID_ID = CLI.CLI_CIDADE", conn);
 
             try
             {
@@ -276,24 +276,12 @@ namespace VendaDeVeiculos.Service
                         cliente.CliId = Convert.ToInt32(reader["CLI_ID"]);
                         cliente.CliNome = reader["CLI_NOME"].ToString();
                         cliente.CliCpfCnpj = reader["CLI_CPFCNPJ"].ToString();
-                        int? codCid;
-                        if (Convert.IsDBNull(reader["CLI_CIDADE"]))
-                        {
-                            codCid = null;
-                        } else
-                        {
-                            codCid = Convert.ToInt32(reader["CLI_CIDADE"]);
-                        }
-                        if (codCid != null)
-                        {
-                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
-                            filtrosCid.Add("cidId", codCid.ToString());
-                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
-                            if (cidades.Count > 0)
-                            {
-                                cliente.CliCidade = (Cidade)cidades[0];
-                            }
-                        }
+                        Cidade cidade = new Cidade();
+                        cidade.CidId = Convert.ToInt32(reader["CID_ID"]);
+                        cidade.CidNome = reader["CID_NOME"].ToString();
+                        cidade.CidPais = reader["CID_PAIS"].ToString();
+                        cidade.CidUf = reader["CID_UF"].ToString();
+                        cliente.CliCidade = cidade;
                         cliente.CliBairro = reader["CLI_BAIRRO"].ToString();
                         cliente.CliLogradouro = reader["CLI_LOGRADOURO"].ToString();
                         cliente.CliNum = Convert.ToInt32(reader["CLI_NUM"]);
@@ -328,7 +316,8 @@ namespace VendaDeVeiculos.Service
             SqlCommand comm;
             SqlDataReader reader;
             ArrayList clientesPesquisados = new ArrayList();
-            string sql = "SELECT * FROM CLIENTE WHERE ";
+            string sql = "SELECT * FROM CLIENTE CLI " +
+                "INNER JOIN CIDADE CID ON CID.CID_ID = CLI.CLI_CIDADE WHERE ";
 
             if (filtros.ContainsKey("cliId"))
             {
@@ -380,17 +369,12 @@ namespace VendaDeVeiculos.Service
                         cliente.CliId = Convert.ToInt32(reader["CLI_ID"]);
                         cliente.CliNome = reader["CLI_NOME"].ToString();
                         cliente.CliCpfCnpj = reader["CLI_CPFCNPJ"].ToString();
-                        int? codCid = Convert.ToInt32(reader["CLI_CIDADE"].ToString());
-                        if (codCid != null)
-                        {
-                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
-                            filtrosCid.Add("cidId", codCid.ToString());
-                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
-                            if (cidades.Count > 0)
-                            {
-                                cliente.CliCidade = (Cidade)cidades[0];
-                            }
-                        }
+                        Cidade cidade = new Cidade();
+                        cidade.CidId = Convert.ToInt32(reader["CID_ID"]);
+                        cidade.CidNome = reader["CID_NOME"].ToString();
+                        cidade.CidPais = reader["CID_PAIS"].ToString();
+                        cidade.CidUf = reader["CID_UF"].ToString();
+                        cliente.CliCidade = cidade;
                         cliente.CliBairro = reader["CLI_BAIRRO"].ToString();
                         cliente.CliLogradouro = reader["CLI_LOGRADOURO"].ToString();
                         cliente.CliNum = Convert.ToInt32(reader["CLI_NUM"]);

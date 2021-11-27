@@ -49,6 +49,7 @@
     <Compile Include="Service\CidadeService.cs" />
     <Compile Include="Service\ClienteService.cs" />
     <Compile Include="Service\VeiculoService.cs" />
+    <Compile Include="Service\VendaService.cs" />
     <Compile Include="Service\VendedorService.cs" />
     <Compile Include="Telas\CadastroCidade.cs">
       <SubType>Form</SubType>

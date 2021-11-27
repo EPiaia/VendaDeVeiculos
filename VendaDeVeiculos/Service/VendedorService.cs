@@ -13,7 +13,6 @@ namespace VendaDeVeiculos.Service
     class VendedorService
     {
 
-        private CidadeService cidService = new CidadeService();
         private String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
 
         public VendedorService()
@@ -250,7 +249,8 @@ namespace VendaDeVeiculos.Service
 
             // Cria o comando SQL de consulta
             comm = new SqlCommand(
-                "SELECT * FROM VENDEDOR", conn);
+                "SELECT * FROM VENDEDOR VEN " +
+                "   INNER JOIN CIDADE CID ON CID.CID_ID = VEN.VDR_CIDADE", conn);
 
             try
             {
@@ -279,25 +279,12 @@ namespace VendaDeVeiculos.Service
                         vendedor.VdrId = Convert.ToInt32(reader["VDR_ID"]);
                         vendedor.VdrNome = reader["VDR_NOME"].ToString();
                         vendedor.VdrCpf = reader["VDR_CPF"].ToString();
-                        int? codCid;
-                        if (Convert.IsDBNull(reader["VDR_CIDADE"]))
-                        {
-                            codCid = null;
-                        }
-                        else
-                        {
-                            codCid = Convert.ToInt32(reader["VDR_CIDADE"]);
-                        }
-                        if (codCid != null)
-                        {
-                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
-                            filtrosCid.Add("cidId", codCid.ToString());
-                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
-                            if (cidades.Count > 0)
-                            {
-                                vendedor.VdrCidade = (Cidade)cidades[0];
-                            }
-                        }
+                        Cidade cidade = new Cidade();
+                        cidade.CidId = Convert.ToInt32(reader["CID_ID"]);
+                        cidade.CidNome = reader["CID_NOME"].ToString();
+                        cidade.CidPais = reader["CID_PAIS"].ToString();
+                        cidade.CidUf = reader["CID_UF"].ToString();
+                        vendedor.VdrCidade = cidade;
                         vendedor.VdrBairro = reader["VDR_BAIRRO"].ToString();
                         vendedor.VdrLogradouro = reader["VDR_LOGRADOURO"].ToString();
                         vendedor.VdrNum = Convert.ToInt32(reader["VDR_NUM"]);
@@ -332,7 +319,8 @@ namespace VendaDeVeiculos.Service
             SqlCommand comm;
             SqlDataReader reader;
             ArrayList vendedoresPesquisados = new ArrayList();
-            string sql = "SELECT * FROM VENDEDOR WHERE ";
+            string sql = "SELECT * FROM VENDEDOR VEN " +
+                " INNER JOIN CIDADE CID ON CID.CID_ID = VEN.VDR_CIDADE WHERE ";
 
             if (filtros.ContainsKey("vdrId"))
             {
@@ -384,18 +372,13 @@ namespace VendaDeVeiculos.Service
                         Vendedor vendedor = new Vendedor();
                         vendedor.VdrId = Convert.ToInt32(reader["VDR_ID"]);
                         vendedor.VdrNome = reader["VDR_NOME"].ToString();
-                        vendedor.VdrCpf = reader["VDR_CPFCNPJ"].ToString();
-                        int? codCid = Convert.ToInt32(reader["VDR_CIDADE"].ToString());
-                        if (codCid != null)
-                        {
-                            Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
-                            filtrosCid.Add("cidId", codCid.ToString());
-                            ArrayList cidades = cidService.filtrarCidades(filtrosCid);
-                            if (cidades.Count > 0)
-                            {
-                                vendedor.VdrCidade = (Cidade)cidades[0];
-                            }
-                        }
+                        vendedor.VdrCpf = reader["VDR_CPF"].ToString();
+                        Cidade cidade = new Cidade();
+                        cidade.CidId = Convert.ToInt32(reader["CID_ID"]);
+                        cidade.CidNome = reader["CID_NOME"].ToString();
+                        cidade.CidPais = reader["CID_PAIS"].ToString();
+                        cidade.CidUf = reader["CID_UF"].ToString();
+                        vendedor.VdrCidade = cidade;
                         vendedor.VdrBairro = reader["VDR_BAIRRO"].ToString();
                         vendedor.VdrLogradouro = reader["VDR_LOGRADOURO"].ToString();
                         vendedor.VdrNum = Convert.ToInt32(reader["VDR_NUM"]);
