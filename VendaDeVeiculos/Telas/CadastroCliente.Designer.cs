@@ -98,6 +98,7 @@ namespace VendaDeVeiculos.Telas
             // tbLogradouro
             // 
             this.tbLogradouro.Location = new System.Drawing.Point(427, 251);
+            this.tbLogradouro.MaxLength = 100;
             this.tbLogradouro.Name = "tbLogradouro";
             this.tbLogradouro.Size = new System.Drawing.Size(195, 20);
             this.tbLogradouro.TabIndex = 13;
@@ -192,6 +193,7 @@ namespace VendaDeVeiculos.Telas
             // tbBairro
             // 
             this.tbBairro.Location = new System.Drawing.Point(427, 200);
+            this.tbBairro.MaxLength = 100;
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(195, 20);
             this.tbBairro.TabIndex = 11;
@@ -219,6 +221,7 @@ namespace VendaDeVeiculos.Telas
             // tbCompl
             // 
             this.tbCompl.Location = new System.Drawing.Point(427, 351);
+            this.tbCompl.MaxLength = 50;
             this.tbCompl.Name = "tbCompl";
             this.tbCompl.Size = new System.Drawing.Size(195, 20);
             this.tbCompl.TabIndex = 17;
@@ -255,6 +258,7 @@ namespace VendaDeVeiculos.Telas
             // tbCidade
             // 
             this.tbCidade.Location = new System.Drawing.Point(427, 153);
+            this.tbCidade.MaxLength = 3;
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(37, 20);
             this.tbCidade.TabIndex = 9;
@@ -282,6 +286,7 @@ namespace VendaDeVeiculos.Telas
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(159, 301);
+            this.tbEmail.MaxLength = 50;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(195, 20);
             this.tbEmail.TabIndex = 19;
@@ -317,6 +322,7 @@ namespace VendaDeVeiculos.Telas
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(159, 153);
+            this.tbNome.MaxLength = 100;
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(195, 20);
             this.tbNome.TabIndex = 4;

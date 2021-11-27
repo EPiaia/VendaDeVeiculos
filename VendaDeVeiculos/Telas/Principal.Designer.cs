@@ -36,12 +36,12 @@ namespace VendaDeVeiculos
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btSair = new System.Windows.Forms.Button();
             this.btCadVenda = new System.Windows.Forms.Button();
@@ -78,27 +78,34 @@ namespace VendaDeVeiculos
             // vendaToolStripMenuItem
             // 
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.vendaToolStripMenuItem.Text = "Venda";
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click_1);
             // 
             // vendedorToolStripMenuItem
             // 
             this.vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
-            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.vendedorToolStripMenuItem.Text = "Vendedor";
             // 
             // veículoToolStripMenuItem
             // 
             this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
-            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.veículoToolStripMenuItem.Text = "Veículo";
+            // 
+            // cidadeToolStripMenuItem
+            // 
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.cidadeToolStripMenuItem.Text = "Cidade";
+            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
             // gerarRelatórioToolStripMenuItem
             // 
@@ -135,13 +142,6 @@ namespace VendaDeVeiculos
             this.veículosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             // 
-            // cidadeToolStripMenuItem
-            // 
-            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cidadeToolStripMenuItem.Text = "Cidade";
-            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -164,6 +164,7 @@ namespace VendaDeVeiculos
             this.btSair.Size = new System.Drawing.Size(53, 34);
             this.btSair.TabIndex = 4;
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btCadVenda
             // 
@@ -200,6 +201,7 @@ namespace VendaDeVeiculos
             this.btCadCli.Size = new System.Drawing.Size(53, 34);
             this.btCadCli.TabIndex = 0;
             this.btCadCli.UseVisualStyleBackColor = true;
+            this.btCadCli.Click += new System.EventHandler(this.btCadCli_Click);
             // 
             // Form1
             // 

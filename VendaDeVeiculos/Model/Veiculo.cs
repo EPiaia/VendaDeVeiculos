@@ -11,7 +11,7 @@ namespace VendaDeVeiculos.Model
         private int? vclId;
         private string vclChassi;
         private string vclMotor;
-        private Modelo vclModelo;
+        private string vclModelo;
         private bool vclUsado;
         private double? vclKm;
         private string vclComplemento;
@@ -21,7 +21,7 @@ namespace VendaDeVeiculos.Model
         {
         }
 
-        public Veiculo(int? vclId, string vclChassi, string vclMotor, Modelo vclModelo, bool vclUsado, double? vclKm, string vclComplemento, bool vclVendido)
+        public Veiculo(int? vclId, string vclChassi, string vclMotor, string vclModelo, bool vclUsado, double? vclKm, string vclComplemento, bool vclVendido)
         {
             this.vclId = vclId;
             this.vclChassi = vclChassi;
@@ -40,7 +40,7 @@ namespace VendaDeVeiculos.Model
         public double? VclKm { get => vclKm; set => vclKm = value; }
         public string VclComplemento { get => vclComplemento; set => vclComplemento = value; }
         public bool VclVendido { get => vclVendido; set => vclVendido = value; }
-        internal Modelo VclModelo { get => vclModelo; set => vclModelo = value; }
+        internal string VclModelo { get => vclModelo; set => vclModelo = value; }
 
         public override bool Equals(object obj)
         {

@@ -34,5 +34,16 @@ namespace VendaDeVeiculos
             CadastroCidade formCC = new CadastroCidade();
             formCC.Show();
         }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btCadCli_Click(object sender, EventArgs e)
+        {
+            CadastroCliente formCC = new CadastroCliente();
+            formCC.Show();
+        }
     }
 }

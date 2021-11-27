@@ -16,7 +16,7 @@ namespace VendaDeVeiculos.Telas
     public partial class CadastroCliente : Form
     {
 
-        private Cliente cliente = new Cliente();
+        private Cliente cliente;
         private bool adicionar = false;
         private ClienteService cs = new ClienteService();
         private CidadeService cidServ = new CidadeService();
@@ -38,6 +38,10 @@ namespace VendaDeVeiculos.Telas
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (!validaCliente())
+            {
+                return;
+            }
             cliente.CliId = Convert.ToInt32(tbCodigo.Text);
             cliente.CliNome = tbNome.Text;
             string cpfCnpj = mtbCpfCnpj.Text;
@@ -118,34 +122,27 @@ namespace VendaDeVeiculos.Telas
 
         private void btDeletar_Click(object sender, EventArgs e)
         {
+            if (cliente.Equals(null) || adicionar)
+            {
+                MessageBox.Show("Selecione um cliente válido.");
+                return;
+            }
             cs.deletarCliente(cliente);
             limparCampos();
+            this.cliente = null;
         }
         private void btCancelar_Click(object sender, EventArgs e)
         {
             limparCampos();
         }
 
-        private void limparCampos()
-        {
-            tbCodigo.Text = "";
-            tbNome.Text = "";
-            mtbCpfCnpj.Text = "";
-            tbEmail.Text = "";
-            mtbFone.Text = "";
-            dtpNasc.Value = DateTime.Now;
-            tbCidade.Text = ""; //
-            tbBairro.Text = "";
-            tbLogradouro.Text = "";
-            mtbNum.Text = "";
-            tbCompl.Text = "";
-            tbCidade.Text = "";
-            tbNomeCidade.Text = "";
-            cliente = new Cliente();
-        }
-
         private void tbCidade_Leave(object sender, EventArgs e)
         {
+            if(cliente == null)
+            {
+                MessageBox.Show("Selecione um cliente.");
+                return;
+            }
             if(tbCidade.Text.Trim().Length > 0) {
                 Dictionary<string, string> filtrosCid = new Dictionary<string, string>();
                 filtrosCid.Add("cidId", tbCidade.Text.Trim());
@@ -156,7 +153,7 @@ namespace VendaDeVeiculos.Telas
                     tbNomeCidade.Text = this.cliente.CliCidade.CidNome;
                 } else
                 {
-                    cliente.CliCidade = new Cidade();
+                    cliente.CliCidade = null;
                     tbNomeCidade.Text = "";
                     tbCidade.Text = "";
                     MessageBox.Show("Nenhuma cidade encontrada com o código informado.");
@@ -164,7 +161,7 @@ namespace VendaDeVeiculos.Telas
                 }
             } else
             {
-                cliente.CliCidade = new Cidade();
+                cliente.CliCidade = null;
                 tbNomeCidade.Text = "";
                 tbCidade.Text = "";
             }
@@ -182,6 +179,85 @@ namespace VendaDeVeiculos.Telas
             tbCidade.Text = this.cliente.CliCidade.CidId.ToString();
             tbNomeCidade.Text = this.cliente.CliCidade.CidNome;
         }
+        private void limparCampos()
+        {
+            tbCodigo.Text = "";
+            tbNome.Text = "";
+            mtbCpfCnpj.Text = "";
+            tbEmail.Text = "";
+            mtbFone.Text = "";
+            dtpNasc.Value = DateTime.Now;
+            tbBairro.Text = "";
+            tbLogradouro.Text = "";
+            mtbNum.Text = "";
+            tbCompl.Text = "";
+            tbCidade.Text = "";
+            tbNomeCidade.Text = "";
+            cliente = new Cliente();
+        }
 
+        public Boolean validaCliente()
+        {
+            if (cliente == null)
+            {
+                MessageBox.Show("Selecione um cliente válido.");
+                return false;
+            }
+            if (tbNome.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("O campo ''Nome Completo'' é obrigatório.");
+                return false;
+            }
+            string cpfCnpj = mtbCpfCnpj.Text.Trim();
+            cpfCnpj = cpfCnpj.Replace(".", "");
+            cpfCnpj = cpfCnpj.Replace("-", "");
+            cpfCnpj = cpfCnpj.Replace("/", "");
+            cpfCnpj = cpfCnpj.Replace(",", "");
+            if (cpfCnpj.Length != 11 || cpfCnpj.Length != 11)
+            {
+                MessageBox.Show("Insira um CPF/CNPJ válido.");
+                return false;
+            }
+            string telefone = mtbFone.Text;
+            telefone = telefone.Replace("(", "");
+            telefone = telefone.Replace(")", "");
+            telefone = telefone.Replace("-", "").Trim();
+            if (telefone.Length < 1)
+            {
+                MessageBox.Show("O campo ''Telefone'' é obrigatório.");
+                return false;
+            }
+            if (naoPossui18Anos(dtpNasc.Value))
+            {
+                MessageBox.Show("O cliente deve ter no mínimo 18 anos.");
+                return false;
+            }
+            if (this.cliente.CliCidade == null)
+            {
+                MessageBox.Show("Insira uma cidade válida.");
+                return false;
+            }
+            if (tbBairro.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("O campo ''Bairro'' é obrigatório.");
+                return false;
+            }
+            if (tbLogradouro.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("O campo ''Logradouro'' é obrigatório.");
+                return false;
+            }
+            if (mtbNum.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("O campo ''Número'' é obrigatório.");
+                return false;
+            }
+            return true;
+        }
+
+        public Boolean naoPossui18Anos(DateTime data)
+        {
+            return DateTime.Today.Year - data.Year < 18;
+        }
     }
 }
