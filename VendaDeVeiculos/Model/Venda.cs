@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendaDeVeiculos.Model
 {
-    class Venda
+    public class Venda
     {
         private int? venId;
         private Cliente venCliente;
@@ -18,6 +18,13 @@ namespace VendaDeVeiculos.Model
         private double? venTributos;
         private double? venDescontos;
         private string venPagamento;
+
+        /* propriedades utilizadas para mostrar o valor no datagrid da consulta de vendas,
+         * já que o datagrid não suporta acessar uma propriedade de uma subclasse
+         */
+        private string marcaVeiculo;
+        private string nomeCliente;
+        private string nomeVendedor;
 
         public Venda()
         {
@@ -44,6 +51,9 @@ namespace VendaDeVeiculos.Model
         public double? VenAdicionais { get => venAdicionais; set => venAdicionais = value; }
         public double? VenTributos { get => venTributos; set => venTributos = value; }
         public double? VenDescontos { get => venDescontos; set => venDescontos = value; }
+        public string MarcaVeiculo { get => marcaVeiculo; set => marcaVeiculo = value; }
+        public string NomeCliente { get => nomeCliente; set => nomeCliente = value; }
+        public string NomeVendedor { get => nomeVendedor; set => nomeVendedor = value; }
         internal Cliente VenCliente { get => venCliente; set => venCliente = value; }
         internal Vendedor VenVendedor { get => venVendedor; set => venVendedor = value; }
         internal Veiculo VenVeiculo { get => venVeiculo; set => venVeiculo = value; }

@@ -69,6 +69,12 @@
     <Compile Include="Telas\CadastroVeiculo.Designer.cs">
       <DependentUpon>CadastroVeiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroVenda.Designer.cs">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\CadastroVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Telas\ConsultaVeiculo.Designer.cs">
       <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaVenda.Designer.cs">
+      <DependentUpon>ConsultaVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\ConsultaVendedor.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,9 @@
     <EmbeddedResource Include="Telas\CadastroVeiculo.resx">
       <DependentUpon>CadastroVeiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroVenda.resx">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\CadastroVendedor.resx">
       <DependentUpon>CadastroVendedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ConsultaVeiculo.resx">
       <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaVenda.resx">
+      <DependentUpon>ConsultaVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ConsultaVendedor.resx">
       <DependentUpon>ConsultaVendedor.cs</DependentUpon>

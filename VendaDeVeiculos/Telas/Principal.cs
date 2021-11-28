@@ -69,5 +69,11 @@ namespace VendaDeVeiculos
             CadastroVeiculo formCV = new CadastroVeiculo();
             formCV.Show();
         }
+
+        private void btCadVenda_Click(object sender, EventArgs e)
+        {
+            CadastroVenda formCV = new CadastroVenda();
+            formCV.Show();
+        }
     }
 }

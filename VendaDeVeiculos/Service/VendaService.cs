@@ -131,10 +131,13 @@ namespace VendaDeVeiculos.Service
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm = new SqlCommand("UPDATE VENDA" +
-                " SET VEN_CLIENTE = @Cliente, SET VEN_VENDEDOR = @Vendedor, " +
-                " SET VEN_VEICULO = @Veiculo, SET VEN_DATA= @Data, SET VEN_TOTAL = @Total," +
-                " SET VEN_ADICIONAIS = @Adicionais, SET VEN_TRIBUTOS = @Tributos," +
-                " SET VEN_DESCONTOS = @Descontos, SET VEN_PAGAMENTO = @Pagamento", conn);
+                " SET VEN_CLIENTE = @Cliente, VEN_VENDEDOR = @Vendedor, " +
+                " VEN_VEICULO = @Veiculo, VEN_DATA= @Data, VEN_TOTAL = @Total," +
+                " VEN_ADICIONAIS = @Adicionais, VEN_TRIBUTOS = @Tributos," +
+                " VEN_DESCONTOS = @Descontos, VEN_PAGAMENTO = @Pagamento" +
+                " WHERE VEN_ID = @Codigo", conn);
+            comm.Parameters.Add("@Codigo", System.Data.SqlDbType.Int);
+            comm.Parameters["@Codigo"].Value = venda.VenId;
             comm.Parameters.Add("@Cliente", System.Data.SqlDbType.Int);
             comm.Parameters["@Cliente"].Value = venda.VenCliente.CliId;
             comm.Parameters.Add("@Vendedor", System.Data.SqlDbType.Int);
@@ -286,6 +289,9 @@ namespace VendaDeVeiculos.Service
                         venda.VenTributos = Convert.ToDouble(reader["VEN_TRIBUTOS"]);
                         venda.VenDescontos = Convert.ToDouble(reader["VEN_DESCONTOS"]);
                         venda.VenPagamento = reader["VEN_PAGAMENTO"].ToString();
+                        venda.NomeCliente = venda.VenCliente.CliNome;
+                        venda.NomeVendedor = venda.VenVendedor.VdrNome;
+                        venda.MarcaVeiculo = venda.VenVeiculo.VclMarca + " " + venda.VenVeiculo.VclModelo;
                         vendasPesquisadas.Add(venda);
                     }
 
@@ -336,11 +342,11 @@ namespace VendaDeVeiculos.Service
                 }
                 if (filtros.ContainsKey("venDataIni"))
                 {
-                    filtrosList.Add("VEN_DATA >= " + filtros["venDataIni"]);
+                    filtrosList.Add("VEN_DATA >= '" + filtros["venDataIni"] + "'");
                 }
                 if (filtros.ContainsKey("venDataFim"))
                 {
-                    filtrosList.Add("VEN_DATA <= " + filtros["venDataFim"]);
+                    filtrosList.Add("VEN_DATA <= '" + filtros["venDataFim"] + "'");
                 }
                 if (filtros.ContainsKey("venTotal"))
                 {
@@ -399,6 +405,9 @@ namespace VendaDeVeiculos.Service
                         venda.VenTributos = Convert.ToDouble(reader["VEN_TRIBUTOS"]);
                         venda.VenDescontos = Convert.ToDouble(reader["VEN_DESCONTOS"]);
                         venda.VenPagamento = reader["VEN_PAGAMENTO"].ToString();
+                        venda.NomeCliente = venda.VenCliente.CliNome;
+                        venda.NomeVendedor = venda.VenVendedor.VdrNome;
+                        venda.MarcaVeiculo = venda.VenVeiculo.VclMarca + " " + venda.VenVeiculo.VclModelo;
                         vendasPesquisadas.Add(venda);
                     }
 

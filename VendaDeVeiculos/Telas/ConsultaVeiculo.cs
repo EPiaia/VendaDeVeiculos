@@ -123,8 +123,20 @@ namespace VendaDeVeiculos.Telas
                 Veiculo veiculoSelecionado = (Veiculo)row.DataBoundItem;
                 if (this.Owner != null)
                 {
-                    CadastroVeiculo cadastro = (CadastroVeiculo)this.Owner;
-                    cadastro.getDadosPesquisa(veiculoSelecionado);
+                    if (typeof(CadastroVeiculo).IsInstanceOfType(this.Owner))
+                    {
+                        CadastroVeiculo cadastro = (CadastroVeiculo)this.Owner;
+                        cadastro.getDadosPesquisa(veiculoSelecionado);
+                    } else if (typeof(CadastroVenda).IsInstanceOfType(this.Owner))
+                    {
+                        CadastroVenda cadastro = (CadastroVenda)this.Owner;
+                        cadastro.getDadosPesqVeiculo(veiculoSelecionado);
+                    }
+                    else if (typeof(ConsultaVenda).IsInstanceOfType(this.Owner))
+                    {
+                        ConsultaVenda cadastro = (ConsultaVenda)this.Owner;
+                        cadastro.getDadosPesqVcl(veiculoSelecionado);
+                    }
                 }
             }
             this.Close();
