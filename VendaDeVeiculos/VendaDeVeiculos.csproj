@@ -46,20 +46,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Service\CidadeService.cs" />
+    <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\VeiculoService.cs" />
+    <Compile Include="Service\VendaService.cs" />
+    <Compile Include="Service\VendedorService.cs" />
+    <Compile Include="Telas\CadastroCidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Telas\CadastroCidade.Designer.cs">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroCliente.Designer.cs">
+      <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadastroVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroVeiculo.Designer.cs">
+      <DependentUpon>CadastroVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroVenda.Designer.cs">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadastroVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroVendedor.Designer.cs">
+      <DependentUpon>CadastroVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaCidade.Designer.cs">
+      <DependentUpon>ConsultaCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaCliente.Designer.cs">
+      <DependentUpon>ConsultaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaVeiculo.Designer.cs">
+      <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaVenda.Designer.cs">
+      <DependentUpon>ConsultaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ConsultaVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ConsultaVendedor.Designer.cs">
+      <DependentUpon>ConsultaVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Cliente.cs" />
-    <Compile Include="Model\Combustivel.cs" />
-    <Compile Include="Model\Especificacoes.cs" />
-    <Compile Include="Model\Linha.cs" />
-    <Compile Include="Model\Marca.cs" />
-    <Compile Include="Model\Modelo.cs" />
-    <Compile Include="Model\Tipo.cs" />
     <Compile Include="Model\Veiculo.cs" />
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Model\Vendedor.cs" />
@@ -73,7 +132,42 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Telas\CadastroCidade.resx">
+      <DependentUpon>CadastroCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroCliente.resx">
+      <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroVeiculo.resx">
+      <DependentUpon>CadastroVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroVenda.resx">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroVendedor.resx">
+      <DependentUpon>CadastroVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaCidade.resx">
+      <DependentUpon>ConsultaCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaCliente.resx">
+      <DependentUpon>ConsultaCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaVeiculo.resx">
+      <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaVenda.resx">
+      <DependentUpon>ConsultaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ConsultaVendedor.resx">
+      <DependentUpon>ConsultaVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +181,56 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-salvar-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-soma-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixo-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gestão-de-cliente-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-salesman-skin-type-1-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fiat-500-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-sale-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sair-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-porta-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-limpar-pesquisa-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vassoura-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-documento-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-documento-30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

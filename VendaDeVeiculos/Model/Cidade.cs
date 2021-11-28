@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendaDeVeiculos.Model
 {
-    class Cidade
+    public class Cidade
     {
         private int? cidId;
         private string cidNome;

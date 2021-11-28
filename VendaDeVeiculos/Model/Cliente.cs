@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendaDeVeiculos.Model
 {
-    class Cliente
+    public class Cliente
     {
         private int? cliId;
         private string cliNome;
