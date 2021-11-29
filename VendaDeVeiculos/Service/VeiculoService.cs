@@ -15,7 +15,6 @@ namespace VendaDeVeiculos.Service
     {
 
         private String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
-        private VendaService venService = new VendaService();
 
         public VeiculoService()
         {

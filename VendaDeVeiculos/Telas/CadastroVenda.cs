@@ -52,6 +52,8 @@ namespace VendaDeVeiculos.Telas
             if (adicionar)
             {
                 venService.gravarVenda(venda);
+                venda.VenVeiculo.VclVendido = true;
+                vclService.atualizarVeiculo(venda.VenVeiculo);
             } else
             {
                 venService.atualizarVenda(venda);
@@ -79,6 +81,8 @@ namespace VendaDeVeiculos.Telas
                 return;
             }
             venService.deletarVenda(venda);
+            venda.VenVeiculo.VclVendido = false;
+            vclService.atualizarVeiculo(venda.VenVeiculo);
             limparCampos();
         }
 
