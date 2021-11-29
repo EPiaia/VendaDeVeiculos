@@ -20,6 +20,7 @@ namespace VendaDeVeiculos.Telas
         private bool adicionar = false;
         private ClienteService cs = new ClienteService();
         private CidadeService cidServ = new CidadeService();
+        private VendaService venS = new VendaService();
 
         public CadastroCliente()
         {
@@ -126,6 +127,11 @@ namespace VendaDeVeiculos.Telas
             if (cliente == null || adicionar)
             {
                 MessageBox.Show("Selecione um cliente válido.");
+                return;
+            }
+            if (estaEmAlgumaVenda(cliente))
+            {
+                MessageBox.Show("O cliente não pode ser deletado porque está em uma venda.");
                 return;
             }
             cs.deletarCliente(cliente);
@@ -260,6 +266,14 @@ namespace VendaDeVeiculos.Telas
         public Boolean naoPossui18Anos(DateTime data)
         {
             return DateTime.Today.Year - data.Year < 18;
+        }
+
+        private Boolean estaEmAlgumaVenda(Cliente cliente)
+        {
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+            filtros.Add("venCliente", cliente.CliId.ToString());
+            ArrayList fVendas = venS.filtrarVendas(filtros);
+            return fVendas.Count > 0;
         }
     }
 }

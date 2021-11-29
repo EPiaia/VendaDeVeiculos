@@ -13,18 +13,6 @@ namespace VendaDeVeiculos
 {
     public partial class Form1 : Form
     {
-        // Telas de cadastro
-        private CadastroCidade cadastroCidade = new CadastroCidade();
-        private CadastroCliente cadastroCliente = new CadastroCliente();
-        private CadastroVendedor cadastroVendedor = new CadastroVendedor();
-        private CadastroVeiculo cadastroVeiculo = new CadastroVeiculo();
-        private CadastroVenda cadastroVenda = new CadastroVenda();
-        // Telas de geração de relatório
-        private RelatorioDeClientes relatorioCliente = new RelatorioDeClientes();
-        private RelatorioDeVendedores relatorioVendedor = new RelatorioDeVendedores();
-        private RelatorioDeVeiculos relatorioVeiculo = new RelatorioDeVeiculos();
-        private RelatorioDeVendas relatorioVenda = new RelatorioDeVendas();
-
 
         public Form1()
         {
@@ -38,12 +26,14 @@ namespace VendaDeVeiculos
 
         private void clienteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            cadastroCliente.Show();
+            CadastroCliente cc = new CadastroCliente();
+            cc.Show();
         }
 
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cadastroCidade.Show();
+            CadastroCidade cc = new CadastroCidade();
+            cc.Show();
         }
 
         private void btSair_Click(object sender, EventArgs e)
@@ -53,57 +43,68 @@ namespace VendaDeVeiculos
 
         private void btCadCli_Click(object sender, EventArgs e)
         {
-            cadastroCliente.Show();
+            CadastroCliente cc = new CadastroCliente();
+            cc.Show();
         }
 
         private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cadastroVendedor.Show();
+            CadastroVendedor cv = new CadastroVendedor();
+            cv.Show();
         }
 
         private void btCadVen_Click(object sender, EventArgs e)
         {
-            cadastroVendedor.Show();
+            CadastroVendedor cv = new CadastroVendedor();
+            cv.Show();
         }
 
         private void veículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cadastroVeiculo.Show();
+            CadastroVeiculo cv = new CadastroVeiculo();
+            cv.Show();
         }
 
         private void btCadVeic_Click(object sender, EventArgs e)
         {
-            cadastroVeiculo.Show();
+            CadastroVeiculo cv = new CadastroVeiculo();
+            cv.Show();
         }
 
         private void btCadVenda_Click(object sender, EventArgs e)
         {
-            cadastroVenda.Show();
+            CadastroVenda cv = new CadastroVenda();
+            cv.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            relatorioCliente.Show();
+            RelatorioDeClientes rc = new RelatorioDeClientes();
+            rc.Show();
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            relatorioVendedor.Show();
+            RelatorioDeVendedores rv = new RelatorioDeVendedores();
+            rv.Show();
         }
 
         private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            relatorioVeiculo.Show();
+            RelatorioDeVeiculos rv = new RelatorioDeVeiculos();
+            rv.Show();
         }
 
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            relatorioVenda.Show();
+            RelatorioDeVendas rv = new RelatorioDeVendas();
+            rv.Show();
         }
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CadastroVenda cv = new CadastroVenda();
+            cv.Show();
         }
     }
 }
