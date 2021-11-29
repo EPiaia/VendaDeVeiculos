@@ -129,12 +129,22 @@ namespace VendaDeVeiculos.Telas
                         cadastro.getDadosPesquisa(veiculoSelecionado);
                     } else if (typeof(CadastroVenda).IsInstanceOfType(this.Owner))
                     {
+                        if (veiculoSelecionado.VclVendido)
+                        {
+                            MessageBox.Show("O veículo selecionado já foi vendido.");
+                            return;
+                        }
                         CadastroVenda cadastro = (CadastroVenda)this.Owner;
                         cadastro.getDadosPesqVeiculo(veiculoSelecionado);
                     }
                     else if (typeof(ConsultaVenda).IsInstanceOfType(this.Owner))
                     {
                         ConsultaVenda cadastro = (ConsultaVenda)this.Owner;
+                        cadastro.getDadosPesqVcl(veiculoSelecionado);
+                    }
+                    else if (typeof(RelatorioDeVendas).IsInstanceOfType(this.Owner))
+                    {
+                        RelatorioDeVendas cadastro = (RelatorioDeVendas)this.Owner;
                         cadastro.getDadosPesqVcl(veiculoSelecionado);
                     }
                 }

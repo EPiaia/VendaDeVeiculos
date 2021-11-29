@@ -52,6 +52,8 @@ namespace VendaDeVeiculos.Telas
             if (adicionar)
             {
                 venService.gravarVenda(venda);
+                venda.VenVeiculo.VclVendido = true;
+                vclService.atualizarVeiculo(venda.VenVeiculo);
             } else
             {
                 venService.atualizarVenda(venda);
@@ -79,6 +81,8 @@ namespace VendaDeVeiculos.Telas
                 return;
             }
             venService.deletarVenda(venda);
+            venda.VenVeiculo.VclVendido = false;
+            vclService.atualizarVeiculo(venda.VenVeiculo);
             limparCampos();
         }
 
@@ -183,7 +187,14 @@ namespace VendaDeVeiculos.Telas
             ArrayList veiculosFiltrados = vclService.filtrarVeiculos(filtros);
             if (veiculosFiltrados.Count > 0)
             {
-                venda.VenVeiculo = (Veiculo)veiculosFiltrados[0];
+                Veiculo veiculo = (Veiculo)veiculosFiltrados[0];
+                if (veiculo.VclVendido)
+                {
+                    MessageBox.Show("O veículo com o código informado já foi vendido.");
+                    tbVclId.Text = "";
+                    return;
+                }
+                venda.VenVeiculo = veiculo;
                 tbNomeVcl.Text = venda.VenVeiculo.VclModelo;
                 venda.VenTotal = calcularTotalVenda();
                 tbVlrTotal.Text = "R$ " + calcularTotalVenda().ToString();

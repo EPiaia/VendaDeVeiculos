@@ -20,6 +20,7 @@ namespace VendaDeVeiculos.Telas
         private Vendedor vendedor;
         private VendedorService vs = new VendedorService();
         private CidadeService cs = new CidadeService();
+        private VendaService venS = new VendaService();
 
         public CadastroVendedor()
         {
@@ -235,9 +236,22 @@ namespace VendaDeVeiculos.Telas
                 MessageBox.Show("Selecione um vendedor válido.");
                 return;
             }
+            if (estaEmAlgumaVenda(vendedor))
+            {
+                MessageBox.Show("O vendedor não pode ser deletado porque está em uma venda.");
+                return;
+            }
             vs.deletarVendedor(vendedor);
             limparCampos();
             this.vendedor = null;
+        }
+
+        private Boolean estaEmAlgumaVenda(Vendedor vendedor)
+        {
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+            filtros.Add("venVendedor", vendedor.VdrId.ToString());
+            ArrayList fVendas = venS.filtrarVendas(filtros);
+            return fVendas.Count > 0;
         }
     }
 }

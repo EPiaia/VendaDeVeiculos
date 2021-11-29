@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,9 @@ namespace VendaDeVeiculos.Telas
 
         private Veiculo veiculo;
         private bool adicionar = true;
+        private bool estadoVclBD;
         private VeiculoService vs = new VeiculoService();
+        private VendaService venService = new VendaService();
 
         public CadastroVeiculo()
         {
@@ -54,6 +57,13 @@ namespace VendaDeVeiculos.Telas
                 vs.gravarVeiculo(veiculo);
             } else
             {
+                if (estaEmAlgumaVenda(veiculo) && veiculo.VclVendido != estadoVclBD)
+                {
+                    MessageBox.Show("O veículo está em uma venda, portanto não é permitido alterar seu estado.");
+                    veiculo.VclVendido = estadoVclBD;
+                    cbVendido.Checked = estadoVclBD;
+                    return;
+                }
                 vs.atualizarVeiculo(veiculo);
             }
         }
@@ -78,6 +88,11 @@ namespace VendaDeVeiculos.Telas
                 MessageBox.Show("Selecione um veículo válido.");
                 return;
             }
+            if (estaEmAlgumaVenda(veiculo))
+            {
+                MessageBox.Show("O veículo não pode ser deletado porque está em uma venda.");
+                return;
+            }
             vs.deletarVeiculo(veiculo);
             limparCampos();
             this.veiculo = null;
@@ -97,6 +112,7 @@ namespace VendaDeVeiculos.Telas
             nudKm.Value = Convert.ToDecimal(veiculo.VclKm);
             nudValor.Value = Convert.ToDecimal(veiculo.VclValor);
             rtbComplemento.Text = veiculo.VclComplemento;
+            estadoVclBD = veiculo.VclVendido;
         }
 
         private void limparCampos()
@@ -142,6 +158,14 @@ namespace VendaDeVeiculos.Telas
                 return false;
             }
             return true;
+        }
+
+        private Boolean estaEmAlgumaVenda(Veiculo veiculo)
+        {
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+            filtros.Add("venVeiculo", veiculo.VclId.ToString());
+            ArrayList fVendas = venService.filtrarVendas(filtros);
+            return fVendas.Count > 0;
         }
 
     }

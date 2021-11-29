@@ -35,6 +35,11 @@ namespace VendaDeVeiculos.Telas
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgVendas = new System.Windows.Forms.DataGridView();
+            this.venId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btPesquisar = new System.Windows.Forms.Button();
@@ -55,11 +60,6 @@ namespace VendaDeVeiculos.Telas
             this.label7 = new System.Windows.Forms.Label();
             this.dtpDataIni = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.venId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.venData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -127,6 +127,45 @@ namespace VendaDeVeiculos.Telas
             this.dgVendas.Size = new System.Drawing.Size(874, 201);
             this.dgVendas.TabIndex = 93;
             this.dgVendas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVendas_CellDoubleClick);
+            // 
+            // venId
+            // 
+            this.venId.DataPropertyName = "venId";
+            this.venId.HeaderText = "Código";
+            this.venId.Name = "venId";
+            this.venId.ReadOnly = true;
+            this.venId.Width = 70;
+            // 
+            // marcaVeiculo
+            // 
+            this.marcaVeiculo.DataPropertyName = "marcaVeiculo";
+            this.marcaVeiculo.HeaderText = "Veículo";
+            this.marcaVeiculo.Name = "marcaVeiculo";
+            this.marcaVeiculo.ReadOnly = true;
+            this.marcaVeiculo.Width = 220;
+            // 
+            // nomeCliente
+            // 
+            this.nomeCliente.DataPropertyName = "nomeCliente";
+            this.nomeCliente.HeaderText = "Cliente";
+            this.nomeCliente.Name = "nomeCliente";
+            this.nomeCliente.ReadOnly = true;
+            this.nomeCliente.Width = 220;
+            // 
+            // nomeVendedor
+            // 
+            this.nomeVendedor.DataPropertyName = "nomeVendedor";
+            this.nomeVendedor.HeaderText = "Vendedor";
+            this.nomeVendedor.Name = "nomeVendedor";
+            this.nomeVendedor.ReadOnly = true;
+            this.nomeVendedor.Width = 220;
+            // 
+            // venData
+            // 
+            this.venData.DataPropertyName = "venData";
+            this.venData.HeaderText = "Data";
+            this.venData.Name = "venData";
+            this.venData.ReadOnly = true;
             // 
             // btLimpar
             // 
@@ -327,45 +366,6 @@ namespace VendaDeVeiculos.Telas
             this.label2.TabIndex = 122;
             this.label2.Text = "De:";
             // 
-            // venId
-            // 
-            this.venId.DataPropertyName = "venId";
-            this.venId.HeaderText = "Código";
-            this.venId.Name = "venId";
-            this.venId.ReadOnly = true;
-            this.venId.Width = 70;
-            // 
-            // marcaVeiculo
-            // 
-            this.marcaVeiculo.DataPropertyName = "marcaVeiculo";
-            this.marcaVeiculo.HeaderText = "Veículo";
-            this.marcaVeiculo.Name = "marcaVeiculo";
-            this.marcaVeiculo.ReadOnly = true;
-            this.marcaVeiculo.Width = 220;
-            // 
-            // nomeCliente
-            // 
-            this.nomeCliente.DataPropertyName = "nomeCliente";
-            this.nomeCliente.HeaderText = "Cliente";
-            this.nomeCliente.Name = "nomeCliente";
-            this.nomeCliente.ReadOnly = true;
-            this.nomeCliente.Width = 220;
-            // 
-            // nomeVendedor
-            // 
-            this.nomeVendedor.DataPropertyName = "nomeVendedor";
-            this.nomeVendedor.HeaderText = "Vendedor";
-            this.nomeVendedor.Name = "nomeVendedor";
-            this.nomeVendedor.ReadOnly = true;
-            this.nomeVendedor.Width = 220;
-            // 
-            // venData
-            // 
-            this.venData.DataPropertyName = "venData";
-            this.venData.HeaderText = "Data";
-            this.venData.Name = "venData";
-            this.venData.ReadOnly = true;
-            // 
             // ConsultaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,8 +392,10 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgVendas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaVenda";
             this.Text = "Consulta de Vendas";
+            this.Load += new System.EventHandler(this.ConsultaVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVendas)).EndInit();
             this.groupBox1.ResumeLayout(false);

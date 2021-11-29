@@ -20,6 +20,9 @@ namespace VendaDeVeiculos.Model
         private string cliFone;
         private DateTime cliNascimento;
 
+        // Propriedade utilizada para pegar a cidade no relatório
+        private string descCidade;
+
         public Cliente()
         {
         }
@@ -49,7 +52,8 @@ namespace VendaDeVeiculos.Model
         public string CliEmail { get => cliEmail; set => cliEmail = value; }
         public string CliFone { get => cliFone; set => cliFone = value; }
         public DateTime CliNascimento { get => cliNascimento; set => cliNascimento = value; }
-        internal Cidade CliCidade { get => cliCidade; set => cliCidade = value; }
+        public string DescCidade { get => descCidade; set => descCidade = value; }
+        public Cidade CliCidade { get => cliCidade; set => cliCidade = value; }
 
         public override bool Equals(object obj)
         {

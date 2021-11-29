@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace VendaDeVeiculos.Telas
         private Cidade cidade;
         private bool adicionar = true;
         private CidadeService cs = new CidadeService();
+        private ClienteService cliS = new ClienteService();
+        private VendedorService venS = new VendedorService();
 
         public CadastroCidade()
         {
@@ -115,9 +118,25 @@ namespace VendaDeVeiculos.Telas
                 MessageBox.Show("Selecione uma cidade válido.");
                 return;
             }
+            if (estaEmAlgumCadastro(cidade))
+            {
+                MessageBox.Show("A cidade não pode ser deletada porque está no cadastro de um cliente/vendedor.");
+                return;
+            }
             cs.deletarCidade(cidade);
             limparCampos();
             cidade = null;
+        }
+
+        private Boolean estaEmAlgumCadastro(Cidade cidade)
+        {
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+            filtros.Add("cliCidade", cidade.CidId.ToString());
+            ArrayList fCli = cliS.filtrarClientes(filtros);
+            filtros.Clear();
+            filtros.Add("vdrCidade", cidade.CidId.ToString());
+            ArrayList fVdr = venS.filtrarVendedores(filtros);
+            return fCli.Count > 0 || fVdr.Count > 0;
         }
     }
 }

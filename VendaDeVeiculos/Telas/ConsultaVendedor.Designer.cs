@@ -29,6 +29,7 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaVendedor));
             this.tbCpf = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -36,13 +37,13 @@ namespace VendaDeVeiculos.Telas
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgVendedores = new System.Windows.Forms.DataGridView();
-            this.btLimpar = new System.Windows.Forms.Button();
-            this.btTodos = new System.Windows.Forms.Button();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.vdrId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vdrNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vdrCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vdrNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btLimpar = new System.Windows.Forms.Button();
+            this.btTodos = new System.Windows.Forms.Button();
+            this.btPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVendedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +112,36 @@ namespace VendaDeVeiculos.Telas
             this.dgVendedores.TabIndex = 10;
             this.dgVendedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVendedores_CellDoubleClick);
             // 
+            // vdrId
+            // 
+            this.vdrId.DataPropertyName = "vdrId";
+            this.vdrId.HeaderText = "Código";
+            this.vdrId.Name = "vdrId";
+            this.vdrId.ReadOnly = true;
+            // 
+            // vdrNome
+            // 
+            this.vdrNome.DataPropertyName = "vdrNome";
+            this.vdrNome.HeaderText = "Nome";
+            this.vdrNome.Name = "vdrNome";
+            this.vdrNome.ReadOnly = true;
+            this.vdrNome.Width = 280;
+            // 
+            // vdrCpf
+            // 
+            this.vdrCpf.DataPropertyName = "vdrCpf";
+            this.vdrCpf.HeaderText = "CPF";
+            this.vdrCpf.Name = "vdrCpf";
+            this.vdrCpf.ReadOnly = true;
+            this.vdrCpf.Width = 170;
+            // 
+            // vdrNascimento
+            // 
+            this.vdrNascimento.DataPropertyName = "vdrNascimento";
+            this.vdrNascimento.HeaderText = "Data Nascimento";
+            this.vdrNascimento.Name = "vdrNascimento";
+            this.vdrNascimento.ReadOnly = true;
+            // 
             // btLimpar
             // 
             this.btLimpar.Image = global::VendaDeVeiculos.Properties.Resources.icons8_vassoura_15;
@@ -147,36 +178,6 @@ namespace VendaDeVeiculos.Telas
             this.btPesquisar.UseVisualStyleBackColor = true;
             this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
-            // vdrId
-            // 
-            this.vdrId.DataPropertyName = "vdrId";
-            this.vdrId.HeaderText = "Código";
-            this.vdrId.Name = "vdrId";
-            this.vdrId.ReadOnly = true;
-            // 
-            // vdrNome
-            // 
-            this.vdrNome.DataPropertyName = "vdrNome";
-            this.vdrNome.HeaderText = "Nome";
-            this.vdrNome.Name = "vdrNome";
-            this.vdrNome.ReadOnly = true;
-            this.vdrNome.Width = 280;
-            // 
-            // vdrCpf
-            // 
-            this.vdrCpf.DataPropertyName = "vdrCpf";
-            this.vdrCpf.HeaderText = "CPF";
-            this.vdrCpf.Name = "vdrCpf";
-            this.vdrCpf.ReadOnly = true;
-            this.vdrCpf.Width = 170;
-            // 
-            // vdrNascimento
-            // 
-            this.vdrNascimento.DataPropertyName = "vdrNascimento";
-            this.vdrNascimento.HeaderText = "Data Nascimento";
-            this.vdrNascimento.Name = "vdrNascimento";
-            this.vdrNascimento.ReadOnly = true;
-            // 
             // ConsultaVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +193,7 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgVendedores);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaVendedor";
             this.Text = "Consulta de Vendedor";
             ((System.ComponentModel.ISupportInitialize)(this.dgVendedores)).EndInit();

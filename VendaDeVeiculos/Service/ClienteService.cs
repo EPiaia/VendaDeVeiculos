@@ -289,6 +289,7 @@ namespace VendaDeVeiculos.Service
                         cliente.CliEmail = reader["CLI_EMAIL"].ToString();
                         cliente.CliFone = reader["CLI_FONE"].ToString();
                         cliente.CliNascimento = Convert.ToDateTime(reader["CLI_NASCIMENTO"]);
+                        cliente.DescCidade = cliente.CliCidade.CidNome + " (" + cliente.CliCidade.CidUf + ")";
                         clientesPesquisados.Add(cliente);
                     }
 
@@ -317,25 +318,38 @@ namespace VendaDeVeiculos.Service
             SqlDataReader reader;
             ArrayList clientesPesquisados = new ArrayList();
             string sql = "SELECT * FROM CLIENTE CLI " +
-                "INNER JOIN CIDADE CID ON CID.CID_ID = CLI.CLI_CIDADE WHERE ";
+                "INNER JOIN CIDADE CID ON CID.CID_ID = CLI.CLI_CIDADE";
 
             if (filtros.ContainsKey("cliId"))
             {
-                sql += "CLI_ID = " + filtros["cliId"];
+                sql += " WHERE CLI_ID = " + filtros["cliId"];
             } else
             {
-                bool addAnd = filtros.ContainsKey("cliNome") && filtros.ContainsKey("cliCpfCnpj");
+                List<string> filtrosList = new List<string>();
                 if (filtros.ContainsKey("cliNome"))
                 {
-                    sql += "CLI_NOME LIKE '%" + filtros["cliNome"] + "%' ";
-                }
-                if (addAnd)
-                {
-                    sql += "AND ";
+                    filtrosList.Add("CLI_NOME LIKE '%" + filtros["cliNome"] + "%'");
                 }
                 if (filtros.ContainsKey("cliCpfCnpj"))
                 {
-                    sql += "CLI_CPFCNPJ LIKE '%" + filtros["cliCpfCnpj"] + "%'";
+                    filtrosList.Add("CLI_CPFCNPJ LIKE '" + filtros["cliCpfCnpj"] + "%'");
+                }
+                if (filtros.ContainsKey("cliDtIni"))
+                {
+                    filtrosList.Add("CLI_NASCIMENTO >= '" + filtros["cliDtIni"] + "'");
+                }
+                if (filtros.ContainsKey("cliDtFim"))
+                {
+                    filtrosList.Add("CLI_NASCIMENTO <= '" + filtros["cliDtFim"] + "'");
+                }
+                sql += filtrosList.Count > 0 ? " WHERE " : "";
+                    for (int i = 0; i < filtrosList.Count; i++)
+                {
+                    sql += filtrosList[i];
+                    if (filtrosList.Count > 1 && i != filtrosList.Count - 1)
+                    {
+                        sql += " AND ";
+                    }
                 }
             }
 
@@ -382,6 +396,7 @@ namespace VendaDeVeiculos.Service
                         cliente.CliEmail = reader["CLI_EMAIL"].ToString();
                         cliente.CliFone = reader["CLI_FONE"].ToString();
                         cliente.CliNascimento = Convert.ToDateTime(reader["CLI_NASCIMENTO"]);
+                        cliente.DescCidade = cliente.CliCidade.CidNome + " (" + cliente.CliCidade.CidUf + ")";
                         clientesPesquisados.Add(cliente);
                     }
 

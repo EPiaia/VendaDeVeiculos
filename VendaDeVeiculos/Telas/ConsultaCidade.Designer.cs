@@ -29,6 +29,7 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaCidade));
             this.tbPais = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -214,6 +215,7 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgCidades);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaCidade";
             this.Text = "Consulta de Cidade";
             this.Load += new System.EventHandler(this.ConsultaCidade_Load);

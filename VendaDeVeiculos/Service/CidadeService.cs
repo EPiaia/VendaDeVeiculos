@@ -13,8 +13,6 @@ namespace VendaDeVeiculos.Service
     public class CidadeService
     {
 
-        private String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
-
         public CidadeService()
         {
 
@@ -24,6 +22,7 @@ namespace VendaDeVeiculos.Service
         public int? getIdNovaCidade()
         {
             int? codigo = 0;
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm = new SqlCommand("SELECT MAX(CID_ID) AS ID FROM CIDADE;", conn);
 
@@ -70,6 +69,7 @@ namespace VendaDeVeiculos.Service
 
         public void gravarCidade(Cidade cidade)
         {
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm = new SqlCommand("INSERT INTO CIDADE" +
                 "(CID_NOME, CID_PAIS, CID_UF)" +
@@ -120,6 +120,7 @@ namespace VendaDeVeiculos.Service
 
         public void atualizarCidade(Cidade cidade)
         {
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm = new SqlCommand("UPDATE CIDADE SET" +
                 " CID_NOME = @Nome, CID_PAIS = @Pais, CID_UF = @UF" +
@@ -170,6 +171,7 @@ namespace VendaDeVeiculos.Service
 
         public void deletarCidade(Cidade cidade)
         {
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm = new SqlCommand("DELETE FROM CIDADE WHERE CID_ID = @Codigo", conn);
             comm.Parameters.Add("@Codigo", System.Data.SqlDbType.Int);
@@ -212,7 +214,7 @@ namespace VendaDeVeiculos.Service
 
         public ArrayList pesquisarTodasCidades()
         {
-
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm;
             SqlDataReader reader;
@@ -273,6 +275,7 @@ namespace VendaDeVeiculos.Service
 
         public ArrayList filtrarCidades(Dictionary<string, string> filtros)
         {
+            String connString = Properties.Settings.Default.vendaDeVeiculosConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand comm;
             SqlDataReader reader;

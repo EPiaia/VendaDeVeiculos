@@ -20,6 +20,8 @@ namespace VendaDeVeiculos.Model
         private string vdrFone;
         private DateTime vdrNascimento;
 
+        private string descCidade;
+
         public Vendedor()
         {
         }
@@ -49,6 +51,7 @@ namespace VendaDeVeiculos.Model
         public string VdrEmail { get => vdrEmail; set => vdrEmail = value; }
         public string VdrFone { get => vdrFone; set => vdrFone = value; }
         public DateTime VdrNascimento { get => vdrNascimento; set => vdrNascimento = value; }
+        public string DescCidade { get => descCidade; set => descCidade = value; }
         internal Cidade VdrCidade { get => vdrCidade; set => vdrCidade = value; }
 
         public override bool Equals(object obj)

@@ -457,8 +457,9 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroVenda";
-            this.Text = "CadastroVenda";
+            this.Text = "Cadastro de Venda";
             ((System.ComponentModel.ISupportInitialize)(this.nudAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTrib)).EndInit();
