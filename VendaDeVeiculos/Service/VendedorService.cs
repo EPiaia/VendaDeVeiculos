@@ -292,6 +292,7 @@ namespace VendaDeVeiculos.Service
                         vendedor.VdrEmail = reader["VDR_EMAIL"].ToString();
                         vendedor.VdrFone = reader["VDR_FONE"].ToString();
                         vendedor.VdrNascimento = Convert.ToDateTime(reader["VDR_NASCIMENTO"]);
+                        vendedor.DescCidade = vendedor.VdrCidade.CidNome + "(" + vendedor.VdrCidade.CidUf + ")";
                         vendedorPesquisado.Add(vendedor);
                     }
 
@@ -320,26 +321,39 @@ namespace VendaDeVeiculos.Service
             SqlDataReader reader;
             ArrayList vendedoresPesquisados = new ArrayList();
             string sql = "SELECT * FROM VENDEDOR VEN " +
-                " INNER JOIN CIDADE CID ON CID.CID_ID = VEN.VDR_CIDADE WHERE ";
+                " INNER JOIN CIDADE CID ON CID.CID_ID = VEN.VDR_CIDADE";
 
             if (filtros.ContainsKey("vdrId"))
             {
-                sql += "VDR_ID = " + filtros["vdrId"];
+                sql += " WHERE VDR_ID = " + filtros["vdrId"];
             }
             else
             {
-                bool addAnd = filtros.ContainsKey("vdrNome") && filtros.ContainsKey("vdrCpf");
+                List<string> filtrosList = new List<string>();
                 if (filtros.ContainsKey("vdrNome"))
                 {
-                    sql += "VDR_NOME LIKE '%" + filtros["vdrNome"] + "%' ";
-                }
-                if (addAnd)
-                {
-                    sql += "AND ";
+                    filtrosList.Add("VDR_NOME LIKE '%" + filtros["vdrNome"] + "%' ");
                 }
                 if (filtros.ContainsKey("vdrCpf"))
                 {
-                    sql += "VDR_CPF LIKE '%" + filtros["vdrCpf"] + "%'";
+                    filtrosList.Add("VDR_CPF LIKE '" + filtros["vdrCpf"] + "%'");
+                }
+                if (filtros.ContainsKey("vdrDtIni"))
+                {
+                    filtrosList.Add("VDR_NASCIMENTO >= '" + filtros["vdrDtIni"] + "'");
+                }
+                if (filtros.ContainsKey("vdrDtFim"))
+                {
+                    filtrosList.Add("VDR_NASCIMENTO <= '" + filtros["vdrDtFim"] + "'");
+                }
+                sql += filtrosList.Count > 0 ? " WHERE " : "";
+                for (int i = 0; i < filtrosList.Count; i++)
+                {
+                    sql += filtrosList[i];
+                    if (filtrosList.Count > 1 && i != filtrosList.Count - 1)
+                    {
+                        sql += " AND ";
+                    }
                 }
             }
 
@@ -386,6 +400,7 @@ namespace VendaDeVeiculos.Service
                         vendedor.VdrEmail = reader["VDR_EMAIL"].ToString();
                         vendedor.VdrFone = reader["VDR_FONE"].ToString();
                         vendedor.VdrNascimento = Convert.ToDateTime(reader["VDR_NASCIMENTO"]);
+                        vendedor.DescCidade = vendedor.VdrCidade.CidNome + "(" + vendedor.VdrCidade.CidUf + ")";
                         vendedoresPesquisados.Add(vendedor);
                     }
 

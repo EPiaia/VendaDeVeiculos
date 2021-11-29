@@ -183,7 +183,14 @@ namespace VendaDeVeiculos.Telas
             ArrayList veiculosFiltrados = vclService.filtrarVeiculos(filtros);
             if (veiculosFiltrados.Count > 0)
             {
-                venda.VenVeiculo = (Veiculo)veiculosFiltrados[0];
+                Veiculo veiculo = (Veiculo)veiculosFiltrados[0];
+                if (veiculo.VclVendido)
+                {
+                    MessageBox.Show("O veículo com o código informado já foi vendido.");
+                    tbVclId.Text = "";
+                    return;
+                }
+                venda.VenVeiculo = veiculo;
                 tbNomeVcl.Text = venda.VenVeiculo.VclModelo;
                 venda.VenTotal = calcularTotalVenda();
                 tbVlrTotal.Text = "R$ " + calcularTotalVenda().ToString();

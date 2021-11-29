@@ -319,11 +319,11 @@ namespace VendaDeVeiculos.Service
             SqlCommand comm;
             SqlDataReader reader;
             ArrayList vendasPesquisadas = new ArrayList();
-            string sql = "SELECT * FROM VENDA WHERE ";
+            string sql = "SELECT * FROM VENDA";
 
             if (filtros.ContainsKey("venId"))
             {
-                sql += "VEN_ID = " + filtros["venId"];
+                sql += " WHERE VEN_ID = " + filtros["venId"];
             }
             else
             {
@@ -352,6 +352,7 @@ namespace VendaDeVeiculos.Service
                 {
                     filtrosList.Add("VEN_TOTAL <= " + filtros["venTotal"]);
                 }
+                sql += filtrosList.Count > 0 ? " WHERE " : "";
                 for (int i = 0; i < filtrosList.Count; i++)
                 {
                     sql += filtrosList[i];

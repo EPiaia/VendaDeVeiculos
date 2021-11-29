@@ -29,7 +29,12 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaCliente));
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,10 +44,6 @@ namespace VendaDeVeiculos.Telas
             this.btLimpar = new System.Windows.Forms.Button();
             this.btTodos = new System.Windows.Forms.Button();
             this.btPesquisar = new System.Windows.Forms.Button();
-            this.cliNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCpfCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +64,36 @@ namespace VendaDeVeiculos.Telas
             this.dgClientes.TabIndex = 0;
             this.dgClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentDoubleClick);
             this.dgClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellDoubleClick);
+            // 
+            // cliId
+            // 
+            this.cliId.DataPropertyName = "cliId";
+            this.cliId.HeaderText = "Código";
+            this.cliId.Name = "cliId";
+            this.cliId.ReadOnly = true;
+            // 
+            // cliNome
+            // 
+            this.cliNome.DataPropertyName = "cliNome";
+            this.cliNome.HeaderText = "Nome";
+            this.cliNome.Name = "cliNome";
+            this.cliNome.ReadOnly = true;
+            this.cliNome.Width = 280;
+            // 
+            // cliCpfCnpj
+            // 
+            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
+            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
+            this.cliCpfCnpj.Name = "cliCpfCnpj";
+            this.cliCpfCnpj.ReadOnly = true;
+            this.cliCpfCnpj.Width = 170;
+            // 
+            // cliNascimento
+            // 
+            this.cliNascimento.DataPropertyName = "cliNascimento";
+            this.cliNascimento.HeaderText = "Data Nascimento";
+            this.cliNascimento.Name = "cliNascimento";
+            this.cliNascimento.ReadOnly = true;
             // 
             // label1
             // 
@@ -148,36 +179,6 @@ namespace VendaDeVeiculos.Telas
             this.btPesquisar.UseVisualStyleBackColor = true;
             this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
-            // cliNascimento
-            // 
-            this.cliNascimento.DataPropertyName = "cliNascimento";
-            this.cliNascimento.HeaderText = "Data Nascimento";
-            this.cliNascimento.Name = "cliNascimento";
-            this.cliNascimento.ReadOnly = true;
-            // 
-            // cliCpfCnpj
-            // 
-            this.cliCpfCnpj.DataPropertyName = "cliCpfCnpj";
-            this.cliCpfCnpj.HeaderText = "CPF/CNPJ";
-            this.cliCpfCnpj.Name = "cliCpfCnpj";
-            this.cliCpfCnpj.ReadOnly = true;
-            this.cliCpfCnpj.Width = 170;
-            // 
-            // cliNome
-            // 
-            this.cliNome.DataPropertyName = "cliNome";
-            this.cliNome.HeaderText = "Nome";
-            this.cliNome.Name = "cliNome";
-            this.cliNome.ReadOnly = true;
-            this.cliNome.Width = 280;
-            // 
-            // cliId
-            // 
-            this.cliId.DataPropertyName = "cliId";
-            this.cliId.HeaderText = "Código";
-            this.cliId.Name = "cliId";
-            this.cliId.ReadOnly = true;
-            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +194,7 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaCliente";
             this.Text = "Pesquisa de Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();

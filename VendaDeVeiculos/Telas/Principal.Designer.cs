@@ -78,34 +78,35 @@ namespace VendaDeVeiculos
             // vendaToolStripMenuItem
             // 
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vendaToolStripMenuItem.Text = "Venda";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click_1);
             // 
             // vendedorToolStripMenuItem
             // 
             this.vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
-            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vendedorToolStripMenuItem.Text = "Vendedor";
             this.vendedorToolStripMenuItem.Click += new System.EventHandler(this.vendedorToolStripMenuItem_Click);
             // 
             // veículoToolStripMenuItem
             // 
             this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
-            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículoToolStripMenuItem.Text = "Veículo";
             this.veículoToolStripMenuItem.Click += new System.EventHandler(this.veículoToolStripMenuItem_Click);
             // 
             // cidadeToolStripMenuItem
             // 
             this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cidadeToolStripMenuItem.Text = "Cidade";
             this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
@@ -125,24 +126,28 @@ namespace VendaDeVeiculos
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
             this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem.Click += new System.EventHandler(this.vendedoresToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
             this.veículosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
+            this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
             // 
             // panel1
             // 

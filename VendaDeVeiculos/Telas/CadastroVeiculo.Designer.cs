@@ -29,6 +29,7 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroVeiculo));
             this.btDeletar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btPesquisar = new System.Windows.Forms.Button();
@@ -367,6 +368,7 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.btPesquisar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.btnNovo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroVeiculo";
             this.Text = "Cadastro de Veiculo";
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();

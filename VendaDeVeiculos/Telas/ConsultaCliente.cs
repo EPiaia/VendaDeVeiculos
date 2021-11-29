@@ -86,6 +86,11 @@ namespace VendaDeVeiculos.Telas
                         ConsultaVenda cadastro = (ConsultaVenda)this.Owner;
                         cadastro.getDadosPesqCli(clienteSelecionado);
                     }
+                    else if (typeof(RelatorioDeVendas).IsInstanceOfType(this.Owner))
+                    {
+                        RelatorioDeVendas cadastro = (RelatorioDeVendas)this.Owner;
+                        cadastro.getDadosPesqCli(clienteSelecionado);
+                    }
                 }
             }
             this.Close();

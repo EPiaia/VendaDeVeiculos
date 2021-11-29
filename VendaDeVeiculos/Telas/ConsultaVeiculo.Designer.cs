@@ -29,6 +29,7 @@ namespace VendaDeVeiculos.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaVeiculo));
             this.cbVendido = new System.Windows.Forms.ComboBox();
             this.cbUsado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -78,7 +79,7 @@ namespace VendaDeVeiculos.Telas
             this.cbUsado.Items.AddRange(new object[] {
             "Todos",
             "Usados",
-            "Não Usados"});
+            "Novos"});
             this.cbUsado.Location = new System.Drawing.Point(351, 88);
             this.cbUsado.Name = "cbUsado";
             this.cbUsado.Size = new System.Drawing.Size(188, 21);
@@ -334,6 +335,7 @@ namespace VendaDeVeiculos.Telas
             this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgVeiculos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaVeiculo";
             this.Text = "Consulta de Veiculos";
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();

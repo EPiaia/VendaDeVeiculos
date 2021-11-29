@@ -227,5 +227,10 @@ namespace VendaDeVeiculos.Telas
                 dtpDataAte.Value = DateTime.Now;
             }
         }
+
+        private void ConsultaVenda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
